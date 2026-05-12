@@ -1345,7 +1345,7 @@ export const storybookSecrets: CompanySecret[] = [
     provider: "aws_secrets_manager",
     status: "active",
     managedMode: "external_reference",
-    externalRef: "arn:aws:secretsmanager:us-east-1:123456789012:secret:paperclip/prod/aws-deploy-AbCdEf",
+    externalRef: "arn:aws:secretsmanager:us-east-1:123456789012:secret:pioneeros/prod/aws-deploy-AbCdEf",
     providerConfigId: null,
     providerMetadata: null,
     latestVersion: 2,
