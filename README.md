@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="doc/assets/header.svg" alt="Pioneer OS — agent coordination platform" width="720" />
+  <img src="doc/assets/header.svg" alt="Ardonex — agent coordination platform" width="720" />
 </p>
 
 <p align="center">
