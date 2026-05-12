@@ -34,48 +34,48 @@ importers:
 
   cli:
     dependencies:
+      '@ardonex/adapter-acpx-local':
+        specifier: workspace:*
+        version: link:../packages/adapters/acpx-local
+      '@ardonex/adapter-claude-local':
+        specifier: workspace:*
+        version: link:../packages/adapters/claude-local
+      '@ardonex/adapter-codex-local':
+        specifier: workspace:*
+        version: link:../packages/adapters/codex-local
+      '@ardonex/adapter-cursor-cloud':
+        specifier: workspace:*
+        version: link:../packages/adapters/cursor-cloud
+      '@ardonex/adapter-cursor-local':
+        specifier: workspace:*
+        version: link:../packages/adapters/cursor-local
+      '@ardonex/adapter-gemini-local':
+        specifier: workspace:*
+        version: link:../packages/adapters/gemini-local
+      '@ardonex/adapter-openclaw-gateway':
+        specifier: workspace:*
+        version: link:../packages/adapters/openclaw-gateway
+      '@ardonex/adapter-opencode-local':
+        specifier: workspace:*
+        version: link:../packages/adapters/opencode-local
+      '@ardonex/adapter-pi-local':
+        specifier: workspace:*
+        version: link:../packages/adapters/pi-local
+      '@ardonex/adapter-utils':
+        specifier: workspace:*
+        version: link:../packages/adapter-utils
+      '@ardonex/db':
+        specifier: workspace:*
+        version: link:../packages/db
+      '@ardonex/server':
+        specifier: workspace:*
+        version: link:../server
+      '@ardonex/shared':
+        specifier: workspace:*
+        version: link:../packages/shared
       '@clack/prompts':
         specifier: ^0.10.0
         version: 0.10.1
-      '@pioneeros/adapter-acpx-local':
-        specifier: workspace:*
-        version: link:../packages/adapters/acpx-local
-      '@pioneeros/adapter-claude-local':
-        specifier: workspace:*
-        version: link:../packages/adapters/claude-local
-      '@pioneeros/adapter-codex-local':
-        specifier: workspace:*
-        version: link:../packages/adapters/codex-local
-      '@pioneeros/adapter-cursor-cloud':
-        specifier: workspace:*
-        version: link:../packages/adapters/cursor-cloud
-      '@pioneeros/adapter-cursor-local':
-        specifier: workspace:*
-        version: link:../packages/adapters/cursor-local
-      '@pioneeros/adapter-gemini-local':
-        specifier: workspace:*
-        version: link:../packages/adapters/gemini-local
-      '@pioneeros/adapter-openclaw-gateway':
-        specifier: workspace:*
-        version: link:../packages/adapters/openclaw-gateway
-      '@pioneeros/adapter-opencode-local':
-        specifier: workspace:*
-        version: link:../packages/adapters/opencode-local
-      '@pioneeros/adapter-pi-local':
-        specifier: workspace:*
-        version: link:../packages/adapters/pi-local
-      '@pioneeros/adapter-utils':
-        specifier: workspace:*
-        version: link:../packages/adapter-utils
-      '@pioneeros/db':
-        specifier: workspace:*
-        version: link:../packages/db
-      '@pioneeros/server':
-        specifier: workspace:*
-        version: link:../server
-      '@pioneeros/shared':
-        specifier: workspace:*
-        version: link:../packages/shared
       commander:
         specifier: ^13.1.0
         version: 13.1.0
@@ -116,7 +116,7 @@ importers:
       '@agentclientprotocol/claude-agent-acp':
         specifier: ^0.31.4
         version: 0.31.4
-      '@pioneeros/adapter-utils':
+      '@ardonex/adapter-utils':
         specifier: workspace:*
         version: link:../../adapter-utils
       '@zed-industries/codex-acp':
@@ -138,7 +138,7 @@ importers:
 
   packages/adapters/claude-local:
     dependencies:
-      '@pioneeros/adapter-utils':
+      '@ardonex/adapter-utils':
         specifier: workspace:*
         version: link:../../adapter-utils
       picocolors:
@@ -154,7 +154,7 @@ importers:
 
   packages/adapters/codex-local:
     dependencies:
-      '@pioneeros/adapter-utils':
+      '@ardonex/adapter-utils':
         specifier: workspace:*
         version: link:../../adapter-utils
       picocolors:
@@ -170,12 +170,12 @@ importers:
 
   packages/adapters/cursor-cloud:
     dependencies:
+      '@ardonex/adapter-utils':
+        specifier: workspace:*
+        version: link:../../adapter-utils
       '@cursor/sdk':
         specifier: ^1.0.12
         version: 1.0.12
-      '@pioneeros/adapter-utils':
-        specifier: workspace:*
-        version: link:../../adapter-utils
       picocolors:
         specifier: ^1.1.1
         version: 1.1.1
@@ -189,7 +189,7 @@ importers:
 
   packages/adapters/cursor-local:
     dependencies:
-      '@pioneeros/adapter-utils':
+      '@ardonex/adapter-utils':
         specifier: workspace:*
         version: link:../../adapter-utils
       picocolors:
@@ -205,7 +205,7 @@ importers:
 
   packages/adapters/gemini-local:
     dependencies:
-      '@pioneeros/adapter-utils':
+      '@ardonex/adapter-utils':
         specifier: workspace:*
         version: link:../../adapter-utils
       picocolors:
@@ -221,7 +221,7 @@ importers:
 
   packages/adapters/openclaw-gateway:
     dependencies:
-      '@pioneeros/adapter-utils':
+      '@ardonex/adapter-utils':
         specifier: workspace:*
         version: link:../../adapter-utils
       picocolors:
@@ -243,7 +243,7 @@ importers:
 
   packages/adapters/opencode-local:
     dependencies:
-      '@pioneeros/adapter-utils':
+      '@ardonex/adapter-utils':
         specifier: workspace:*
         version: link:../../adapter-utils
       picocolors:
@@ -259,7 +259,7 @@ importers:
 
   packages/adapters/pi-local:
     dependencies:
-      '@pioneeros/adapter-utils':
+      '@ardonex/adapter-utils':
         specifier: workspace:*
         version: link:../../adapter-utils
       picocolors:
@@ -275,7 +275,7 @@ importers:
 
   packages/db:
     dependencies:
-      '@pioneeros/shared':
+      '@ardonex/shared':
         specifier: workspace:*
         version: link:../shared
       drizzle-orm:
@@ -306,12 +306,12 @@ importers:
 
   packages/mcp-server:
     dependencies:
+      '@ardonex/shared':
+        specifier: workspace:*
+        version: link:../shared
       '@modelcontextprotocol/sdk':
         specifier: ^1.29.0
         version: 1.29.0(zod@3.25.76)
-      '@pioneeros/shared':
-        specifier: workspace:*
-        version: link:../shared
       zod:
         specifier: ^3.24.2
         version: 3.25.76
@@ -328,7 +328,7 @@ importers:
 
   packages/plugins/create-paperclip-plugin:
     dependencies:
-      '@pioneeros/plugin-sdk':
+      '@ardonex/plugin-sdk':
         specifier: workspace:*
         version: link:../sdk
     devDependencies:
@@ -341,7 +341,7 @@ importers:
 
   packages/plugins/examples/plugin-authoring-smoke-example:
     dependencies:
-      '@pioneeros/plugin-sdk':
+      '@ardonex/plugin-sdk':
         specifier: workspace:*
         version: link:../../sdk
       react:
@@ -378,6 +378,9 @@ importers:
 
   packages/plugins/examples/plugin-file-browser-example:
     dependencies:
+      '@ardonex/plugin-sdk':
+        specifier: workspace:*
+        version: link:../../sdk
       '@codemirror/lang-javascript':
         specifier: ^6.2.2
         version: 6.2.4
@@ -393,9 +396,6 @@ importers:
       '@lezer/highlight':
         specifier: ^1.2.1
         version: 1.2.3
-      '@pioneeros/plugin-sdk':
-        specifier: workspace:*
-        version: link:../../sdk
       codemirror:
         specifier: ^6.0.1
         version: 6.0.2
@@ -424,7 +424,7 @@ importers:
 
   packages/plugins/examples/plugin-hello-world-example:
     dependencies:
-      '@pioneeros/plugin-sdk':
+      '@ardonex/plugin-sdk':
         specifier: workspace:*
         version: link:../../sdk
     devDependencies:
@@ -449,10 +449,10 @@ importers:
 
   packages/plugins/examples/plugin-kitchen-sink-example:
     dependencies:
-      '@pioneeros/plugin-sdk':
+      '@ardonex/plugin-sdk':
         specifier: workspace:*
         version: link:../../sdk
-      '@pioneeros/shared':
+      '@ardonex/shared':
         specifier: workspace:*
         version: link:../../../shared
     devDependencies:
@@ -480,7 +480,7 @@ importers:
 
   packages/plugins/paperclip-plugin-fake-sandbox:
     dependencies:
-      '@pioneeros/plugin-sdk':
+      '@ardonex/plugin-sdk':
         specifier: workspace:*
         version: link:../sdk
     devDependencies:
@@ -500,7 +500,7 @@ importers:
         specifier: '>=18'
         version: 19.2.4
     devDependencies:
-      '@pioneeros/plugin-sdk':
+      '@ardonex/plugin-sdk':
         specifier: workspace:*
         version: link:../sdk
       '@rollup/plugin-node-resolve':
@@ -539,7 +539,7 @@ importers:
 
   packages/plugins/sdk:
     dependencies:
-      '@pioneeros/shared':
+      '@ardonex/shared':
         specifier: workspace:*
         version: link:../../shared
       react:
@@ -571,48 +571,48 @@ importers:
 
   server:
     dependencies:
+      '@ardonex/adapter-acpx-local':
+        specifier: workspace:*
+        version: link:../packages/adapters/acpx-local
+      '@ardonex/adapter-claude-local':
+        specifier: workspace:*
+        version: link:../packages/adapters/claude-local
+      '@ardonex/adapter-codex-local':
+        specifier: workspace:*
+        version: link:../packages/adapters/codex-local
+      '@ardonex/adapter-cursor-cloud':
+        specifier: workspace:*
+        version: link:../packages/adapters/cursor-cloud
+      '@ardonex/adapter-cursor-local':
+        specifier: workspace:*
+        version: link:../packages/adapters/cursor-local
+      '@ardonex/adapter-gemini-local':
+        specifier: workspace:*
+        version: link:../packages/adapters/gemini-local
+      '@ardonex/adapter-openclaw-gateway':
+        specifier: workspace:*
+        version: link:../packages/adapters/openclaw-gateway
+      '@ardonex/adapter-opencode-local':
+        specifier: workspace:*
+        version: link:../packages/adapters/opencode-local
+      '@ardonex/adapter-pi-local':
+        specifier: workspace:*
+        version: link:../packages/adapters/pi-local
+      '@ardonex/adapter-utils':
+        specifier: workspace:*
+        version: link:../packages/adapter-utils
+      '@ardonex/db':
+        specifier: workspace:*
+        version: link:../packages/db
+      '@ardonex/plugin-sdk':
+        specifier: workspace:*
+        version: link:../packages/plugins/sdk
+      '@ardonex/shared':
+        specifier: workspace:*
+        version: link:../packages/shared
       '@aws-sdk/client-s3':
         specifier: ^3.888.0
         version: 3.994.0
-      '@pioneeros/adapter-acpx-local':
-        specifier: workspace:*
-        version: link:../packages/adapters/acpx-local
-      '@pioneeros/adapter-claude-local':
-        specifier: workspace:*
-        version: link:../packages/adapters/claude-local
-      '@pioneeros/adapter-codex-local':
-        specifier: workspace:*
-        version: link:../packages/adapters/codex-local
-      '@pioneeros/adapter-cursor-cloud':
-        specifier: workspace:*
-        version: link:../packages/adapters/cursor-cloud
-      '@pioneeros/adapter-cursor-local':
-        specifier: workspace:*
-        version: link:../packages/adapters/cursor-local
-      '@pioneeros/adapter-gemini-local':
-        specifier: workspace:*
-        version: link:../packages/adapters/gemini-local
-      '@pioneeros/adapter-openclaw-gateway':
-        specifier: workspace:*
-        version: link:../packages/adapters/openclaw-gateway
-      '@pioneeros/adapter-opencode-local':
-        specifier: workspace:*
-        version: link:../packages/adapters/opencode-local
-      '@pioneeros/adapter-pi-local':
-        specifier: workspace:*
-        version: link:../packages/adapters/pi-local
-      '@pioneeros/adapter-utils':
-        specifier: workspace:*
-        version: link:../packages/adapter-utils
-      '@pioneeros/db':
-        specifier: workspace:*
-        version: link:../packages/db
-      '@pioneeros/plugin-sdk':
-        specifier: workspace:*
-        version: link:../packages/plugins/sdk
-      '@pioneeros/shared':
-        specifier: workspace:*
-        version: link:../packages/shared
       ajv:
         specifier: ^8.18.0
         version: 8.18.0
@@ -719,6 +719,39 @@ importers:
 
   ui:
     dependencies:
+      '@ardonex/adapter-acpx-local':
+        specifier: workspace:*
+        version: link:../packages/adapters/acpx-local
+      '@ardonex/adapter-claude-local':
+        specifier: workspace:*
+        version: link:../packages/adapters/claude-local
+      '@ardonex/adapter-codex-local':
+        specifier: workspace:*
+        version: link:../packages/adapters/codex-local
+      '@ardonex/adapter-cursor-cloud':
+        specifier: workspace:*
+        version: link:../packages/adapters/cursor-cloud
+      '@ardonex/adapter-cursor-local':
+        specifier: workspace:*
+        version: link:../packages/adapters/cursor-local
+      '@ardonex/adapter-gemini-local':
+        specifier: workspace:*
+        version: link:../packages/adapters/gemini-local
+      '@ardonex/adapter-openclaw-gateway':
+        specifier: workspace:*
+        version: link:../packages/adapters/openclaw-gateway
+      '@ardonex/adapter-opencode-local':
+        specifier: workspace:*
+        version: link:../packages/adapters/opencode-local
+      '@ardonex/adapter-pi-local':
+        specifier: workspace:*
+        version: link:../packages/adapters/pi-local
+      '@ardonex/adapter-utils':
+        specifier: workspace:*
+        version: link:../packages/adapter-utils
+      '@ardonex/shared':
+        specifier: workspace:*
+        version: link:../packages/shared
       '@assistant-ui/react':
         specifier: 0.12.23
         version: 0.12.23(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(use-sync-external-store@1.6.0(react@19.2.4))
@@ -737,39 +770,6 @@ importers:
       '@mdxeditor/editor':
         specifier: ^3.52.4
         version: 3.52.4(@codemirror/language@6.12.1)(@lezer/highlight@1.2.3)(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(yjs@13.6.29)
-      '@pioneeros/adapter-acpx-local':
-        specifier: workspace:*
-        version: link:../packages/adapters/acpx-local
-      '@pioneeros/adapter-claude-local':
-        specifier: workspace:*
-        version: link:../packages/adapters/claude-local
-      '@pioneeros/adapter-codex-local':
-        specifier: workspace:*
-        version: link:../packages/adapters/codex-local
-      '@pioneeros/adapter-cursor-cloud':
-        specifier: workspace:*
-        version: link:../packages/adapters/cursor-cloud
-      '@pioneeros/adapter-cursor-local':
-        specifier: workspace:*
-        version: link:../packages/adapters/cursor-local
-      '@pioneeros/adapter-gemini-local':
-        specifier: workspace:*
-        version: link:../packages/adapters/gemini-local
-      '@pioneeros/adapter-openclaw-gateway':
-        specifier: workspace:*
-        version: link:../packages/adapters/openclaw-gateway
-      '@pioneeros/adapter-opencode-local':
-        specifier: workspace:*
-        version: link:../packages/adapters/opencode-local
-      '@pioneeros/adapter-pi-local':
-        specifier: workspace:*
-        version: link:../packages/adapters/pi-local
-      '@pioneeros/adapter-utils':
-        specifier: workspace:*
-        version: link:../packages/adapter-utils
-      '@pioneeros/shared':
-        specifier: workspace:*
-        version: link:../packages/shared
       '@radix-ui/react-slot':
         specifier: ^1.2.4
         version: 1.2.4(@types/react@19.2.14)(react@19.2.4)

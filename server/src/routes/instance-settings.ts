@@ -1,10 +1,10 @@
 import { Router, type Request } from "express";
-import type { Db } from "@pioneeros/db";
+import type { Db } from "@ardonex/db";
 import {
   issueGraphLivenessAutoRecoveryRequestSchema,
   patchInstanceExperimentalSettingsSchema,
   patchInstanceGeneralSettingsSchema,
-} from "@pioneeros/shared";
+} from "@ardonex/shared";
 import { forbidden } from "../errors.js";
 import { validate } from "../middleware/validate.js";
 import { heartbeatService, instanceSettingsService, logActivity } from "../services/index.js";

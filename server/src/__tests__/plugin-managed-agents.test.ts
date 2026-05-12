@@ -15,8 +15,8 @@ import {
   pluginCompanySettings,
   pluginManagedResources,
   plugins,
-} from "@pioneeros/db";
-import type { PaperclipPluginManifestV1 } from "@pioneeros/shared";
+} from "@ardonex/db";
+import type { PaperclipPluginManifestV1 } from "@ardonex/shared";
 import {
   getEmbeddedPostgresTestSupport,
   startEmbeddedPostgresTestDatabase,
@@ -113,7 +113,7 @@ describeEmbeddedPostgres("plugin-managed agents", () => {
     await db.insert(plugins).values({
       id: pluginId,
       pluginKey: pluginManifest.id,
-      packageName: "@pioneeros/plugin-managed-agents-test",
+      packageName: "@ardonex/plugin-managed-agents-test",
       version: pluginManifest.version,
       apiVersion: pluginManifest.apiVersion,
       categories: pluginManifest.categories,

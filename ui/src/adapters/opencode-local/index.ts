@@ -1,7 +1,7 @@
 import type { UIAdapterModule } from "../types";
-import { parseOpenCodeStdoutLine } from "@pioneeros/adapter-opencode-local/ui";
+import { parseOpenCodeStdoutLine } from "@ardonex/adapter-opencode-local/ui";
 import { OpenCodeLocalConfigFields } from "./config-fields";
-import { buildOpenCodeLocalConfig } from "@pioneeros/adapter-opencode-local/ui";
+import { buildOpenCodeLocalConfig } from "@ardonex/adapter-opencode-local/ui";
 
 export const openCodeLocalUIAdapter: UIAdapterModule = {
   type: "opencode_local",

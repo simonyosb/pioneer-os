@@ -62,7 +62,7 @@ const mockIssueThreadInteractionService = vi.hoisted(() => ({
 }));
 
 function registerRouteMocks() {
-  vi.doMock("@pioneeros/shared/telemetry", () => ({
+  vi.doMock("@ardonex/shared/telemetry", () => ({
     trackAgentTaskCompleted: vi.fn(),
     trackErrorHandlerCrash: vi.fn(),
   }));
@@ -230,7 +230,7 @@ function boardActor() {
 describe("agent issue mutation checkout ownership", () => {
   beforeEach(() => {
     vi.resetModules();
-    vi.doUnmock("@pioneeros/shared/telemetry");
+    vi.doUnmock("@ardonex/shared/telemetry");
     vi.doUnmock("../telemetry.js");
     vi.doUnmock("../services/access.js");
     vi.doUnmock("../services/activity-log.js");

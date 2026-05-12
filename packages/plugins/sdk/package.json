@@ -1,5 +1,5 @@
 {
-  "name": "@pioneeros/plugin-sdk",
+  "name": "@ardonex/plugin-sdk",
   "version": "1.0.0",
   "description": "Stable public API for Paperclip plugins — worker-side context and UI bridge hooks",
   "license": "MIT",
@@ -101,14 +101,14 @@
     "dist"
   ],
   "scripts": {
-    "build": "pnpm --filter @pioneeros/shared build && tsc",
+    "build": "pnpm --filter @ardonex/shared build && tsc",
     "clean": "rm -rf dist",
     "ensure-build-deps": "node ../../../scripts/ensure-plugin-build-deps.mjs",
-    "typecheck": "pnpm --filter @pioneeros/shared build && tsc --noEmit",
+    "typecheck": "pnpm --filter @ardonex/shared build && tsc --noEmit",
     "dev:server": "tsx src/dev-cli.ts"
   },
   "dependencies": {
-    "@pioneeros/shared": "workspace:*",
+    "@ardonex/shared": "workspace:*",
     "zod": "^3.24.2"
   },
   "devDependencies": {

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { resolveRuntimeBind, validateConfiguredBindMode } from "@pioneeros/shared";
+import { resolveRuntimeBind, validateConfiguredBindMode } from "@ardonex/shared";
 import { buildPresetServerConfig } from "../config/server-bind.js";
 
 describe("network bind helpers", () => {

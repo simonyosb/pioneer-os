@@ -1,6 +1,6 @@
 import { Router, type Request, type Response } from "express";
-import type { Db } from "@pioneeros/db";
-import { upsertSidebarOrderPreferenceSchema } from "@pioneeros/shared";
+import type { Db } from "@ardonex/db";
+import { upsertSidebarOrderPreferenceSchema } from "@ardonex/shared";
 import { validate } from "../middleware/validate.js";
 import { logActivity, sidebarPreferenceService } from "../services/index.js";
 import { assertBoard, assertCompanyAccess, getActorInfo } from "./authz.js";

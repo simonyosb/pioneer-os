@@ -1,7 +1,7 @@
 import {
   buildSandboxNpmInstallCommand,
   type AdapterModelProfileDefinition,
-} from "@pioneeros/adapter-utils";
+} from "@ardonex/adapter-utils";
 
 export const type = "gemini_local";
 export const label = "Gemini CLI (local)";

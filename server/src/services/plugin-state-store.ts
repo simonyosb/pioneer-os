@@ -1,11 +1,11 @@
 import { and, eq, isNull } from "drizzle-orm";
-import type { Db } from "@pioneeros/db";
-import { plugins, pluginState } from "@pioneeros/db";
+import type { Db } from "@ardonex/db";
+import { plugins, pluginState } from "@ardonex/db";
 import type {
   PluginStateScopeKind,
   SetPluginState,
   ListPluginState,
-} from "@pioneeros/shared";
+} from "@ardonex/shared";
 import { notFound } from "../errors.js";
 
 // ---------------------------------------------------------------------------

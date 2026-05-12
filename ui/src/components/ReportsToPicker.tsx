@@ -1,5 +1,5 @@
 import { useState } from "react";
-import type { Agent } from "@pioneeros/shared";
+import type { Agent } from "@ardonex/shared";
 import {
   Popover,
   PopoverContent,

@@ -1,4 +1,4 @@
-import type { PaperclipPluginManifestV1 } from "@pioneeros/plugin-sdk";
+import type { PaperclipPluginManifestV1 } from "@ardonex/plugin-sdk";
 import {
   DEFAULT_CONFIG,
   EXPORT_NAMES,

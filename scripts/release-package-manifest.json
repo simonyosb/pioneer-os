@@ -1,72 +1,72 @@
 [
   {
     "dir": "packages/adapter-utils",
-    "name": "@pioneeros/adapter-utils",
+    "name": "@ardonex/adapter-utils",
     "publishFromCi": true
   },
   {
     "dir": "packages/adapters/acpx-local",
-    "name": "@pioneeros/adapter-acpx-local",
+    "name": "@ardonex/adapter-acpx-local",
     "publishFromCi": true
   },
   {
     "dir": "packages/adapters/claude-local",
-    "name": "@pioneeros/adapter-claude-local",
+    "name": "@ardonex/adapter-claude-local",
     "publishFromCi": true
   },
   {
     "dir": "packages/adapters/codex-local",
-    "name": "@pioneeros/adapter-codex-local",
+    "name": "@ardonex/adapter-codex-local",
     "publishFromCi": true
   },
   {
     "dir": "packages/adapters/cursor-cloud",
-    "name": "@pioneeros/adapter-cursor-cloud",
+    "name": "@ardonex/adapter-cursor-cloud",
     "publishFromCi": true
   },
   {
     "dir": "packages/adapters/cursor-local",
-    "name": "@pioneeros/adapter-cursor-local",
+    "name": "@ardonex/adapter-cursor-local",
     "publishFromCi": true
   },
   {
     "dir": "packages/adapters/gemini-local",
-    "name": "@pioneeros/adapter-gemini-local",
+    "name": "@ardonex/adapter-gemini-local",
     "publishFromCi": true
   },
   {
     "dir": "packages/adapters/opencode-local",
-    "name": "@pioneeros/adapter-opencode-local",
+    "name": "@ardonex/adapter-opencode-local",
     "publishFromCi": true
   },
   {
     "dir": "packages/adapters/pi-local",
-    "name": "@pioneeros/adapter-pi-local",
+    "name": "@ardonex/adapter-pi-local",
     "publishFromCi": true
   },
   {
     "dir": "packages/adapters/openclaw-gateway",
-    "name": "@pioneeros/adapter-openclaw-gateway",
+    "name": "@ardonex/adapter-openclaw-gateway",
     "publishFromCi": true
   },
   {
     "dir": "packages/shared",
-    "name": "@pioneeros/shared",
+    "name": "@ardonex/shared",
     "publishFromCi": true
   },
   {
     "dir": "packages/db",
-    "name": "@pioneeros/db",
+    "name": "@ardonex/db",
     "publishFromCi": true
   },
   {
     "dir": "packages/plugins/sdk",
-    "name": "@pioneeros/plugin-sdk",
+    "name": "@ardonex/plugin-sdk",
     "publishFromCi": true
   },
   {
     "dir": "server",
-    "name": "@pioneeros/server",
+    "name": "@ardonex/server",
     "publishFromCi": true
   },
   {
@@ -76,37 +76,37 @@
   },
   {
     "dir": "packages/mcp-server",
-    "name": "@pioneeros/mcp-server",
+    "name": "@ardonex/mcp-server",
     "publishFromCi": true
   },
   {
     "dir": "packages/plugins/create-paperclip-plugin",
-    "name": "@pioneeros/create-paperclip-plugin",
+    "name": "@ardonex/create-paperclip-plugin",
     "publishFromCi": true
   },
   {
     "dir": "packages/plugins/sandbox-providers/cloudflare",
-    "name": "@pioneeros/plugin-cloudflare-sandbox",
+    "name": "@ardonex/plugin-cloudflare-sandbox",
     "publishFromCi": true
   },
   {
     "dir": "packages/plugins/sandbox-providers/daytona",
-    "name": "@pioneeros/plugin-daytona",
+    "name": "@ardonex/plugin-daytona",
     "publishFromCi": true
   },
   {
     "dir": "packages/plugins/sandbox-providers/exe-dev",
-    "name": "@pioneeros/plugin-exe-dev",
+    "name": "@ardonex/plugin-exe-dev",
     "publishFromCi": true
   },
   {
     "dir": "packages/plugins/sandbox-providers/e2b",
-    "name": "@pioneeros/plugin-e2b",
+    "name": "@ardonex/plugin-e2b",
     "publishFromCi": true
   },
   {
     "dir": "ui",
-    "name": "@pioneeros/ui",
+    "name": "@ardonex/ui",
     "publishFromCi": true
   }
 ]

@@ -1,7 +1,7 @@
 import type { UIAdapterModule } from "../types";
-import { parsePiStdoutLine } from "@pioneeros/adapter-pi-local/ui";
+import { parsePiStdoutLine } from "@ardonex/adapter-pi-local/ui";
 import { PiLocalConfigFields } from "./config-fields";
-import { buildPiLocalConfig } from "@pioneeros/adapter-pi-local/ui";
+import { buildPiLocalConfig } from "@ardonex/adapter-pi-local/ui";
 
 export const piLocalUIAdapter: UIAdapterModule = {
   type: "pi_local",

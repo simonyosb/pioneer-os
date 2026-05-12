@@ -1,5 +1,5 @@
 import esbuild from "esbuild";
-import { createPluginBundlerPresets } from "@pioneeros/plugin-sdk/bundlers";
+import { createPluginBundlerPresets } from "@ardonex/plugin-sdk/bundlers";
 
 const presets = createPluginBundlerPresets({ uiEntry: "src/ui/index.tsx" });
 const watch = process.argv.includes("--watch");

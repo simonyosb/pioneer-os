@@ -1,6 +1,6 @@
 import { Buffer } from "node:buffer";
 import { and, asc, desc, eq, gt, inArray, isNull, like, lt, ne, notInArray, or, sql } from "drizzle-orm";
-import type { Db } from "@pioneeros/db";
+import type { Db } from "@ardonex/db";
 import {
   activityLog,
   agentWakeupRequests,
@@ -26,7 +26,7 @@ import {
   labels,
   projectWorkspaces,
   projects,
-} from "@pioneeros/db";
+} from "@ardonex/db";
 import type {
   IssueCommentAuthorType,
   IssueCommentMetadata,
@@ -35,7 +35,7 @@ import type {
   IssueProductivityReview,
   IssueProductivityReviewTrigger,
   IssueRelationIssueSummary,
-} from "@pioneeros/shared";
+} from "@ardonex/shared";
 import {
   clampIssueRequestDepth,
   extractAgentMentionIds,
@@ -45,7 +45,7 @@ import {
   issueCommentPresentationSchema,
   isUuidLike,
   normalizeIssueIdentifier as normalizeIssueReferenceIdentifier,
-} from "@pioneeros/shared";
+} from "@ardonex/shared";
 import { conflict, notFound, unprocessable } from "../errors.js";
 import { parseObject } from "../adapters/utils.js";
 import {

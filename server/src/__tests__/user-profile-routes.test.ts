@@ -12,7 +12,7 @@ import {
   createDb,
   issueComments,
   issues,
-} from "@pioneeros/db";
+} from "@ardonex/db";
 import {
   getEmbeddedPostgresTestSupport,
   startEmbeddedPostgresTestDatabase,

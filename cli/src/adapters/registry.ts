@@ -1,13 +1,13 @@
-import type { CLIAdapterModule } from "@pioneeros/adapter-utils";
-import { printAcpxStreamEvent } from "@pioneeros/adapter-acpx-local/cli";
-import { printClaudeStreamEvent } from "@pioneeros/adapter-claude-local/cli";
-import { printCodexStreamEvent } from "@pioneeros/adapter-codex-local/cli";
-import { printCursorStreamEvent } from "@pioneeros/adapter-cursor-local/cli";
-import { printCursorCloudEvent } from "@pioneeros/adapter-cursor-cloud/cli";
-import { printGeminiStreamEvent } from "@pioneeros/adapter-gemini-local/cli";
-import { printOpenCodeStreamEvent } from "@pioneeros/adapter-opencode-local/cli";
-import { printPiStreamEvent } from "@pioneeros/adapter-pi-local/cli";
-import { printOpenClawGatewayStreamEvent } from "@pioneeros/adapter-openclaw-gateway/cli";
+import type { CLIAdapterModule } from "@ardonex/adapter-utils";
+import { printAcpxStreamEvent } from "@ardonex/adapter-acpx-local/cli";
+import { printClaudeStreamEvent } from "@ardonex/adapter-claude-local/cli";
+import { printCodexStreamEvent } from "@ardonex/adapter-codex-local/cli";
+import { printCursorStreamEvent } from "@ardonex/adapter-cursor-local/cli";
+import { printCursorCloudEvent } from "@ardonex/adapter-cursor-cloud/cli";
+import { printGeminiStreamEvent } from "@ardonex/adapter-gemini-local/cli";
+import { printOpenCodeStreamEvent } from "@ardonex/adapter-opencode-local/cli";
+import { printPiStreamEvent } from "@ardonex/adapter-pi-local/cli";
+import { printOpenClawGatewayStreamEvent } from "@ardonex/adapter-openclaw-gateway/cli";
 import { processCLIAdapter } from "./process/index.js";
 import { httpCLIAdapter } from "./http/index.js";
 

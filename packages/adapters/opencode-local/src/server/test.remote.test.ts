@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
-import type { AdapterExecutionTarget } from "@pioneeros/adapter-utils/execution-target";
+import type { AdapterExecutionTarget } from "@ardonex/adapter-utils/execution-target";
 
 const {
   ensureAdapterExecutionTargetDirectory,
@@ -52,9 +52,9 @@ const {
   };
 });
 
-vi.mock("@pioneeros/adapter-utils/execution-target", async () => {
-  const actual = await vi.importActual<typeof import("@pioneeros/adapter-utils/execution-target")>(
-    "@pioneeros/adapter-utils/execution-target",
+vi.mock("@ardonex/adapter-utils/execution-target", async () => {
+  const actual = await vi.importActual<typeof import("@ardonex/adapter-utils/execution-target")>(
+    "@ardonex/adapter-utils/execution-target",
   );
   return {
     ...actual,

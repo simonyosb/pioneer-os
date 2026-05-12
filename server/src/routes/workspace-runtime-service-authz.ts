@@ -1,6 +1,6 @@
 import { and, eq, inArray, isNull, ne, or } from "drizzle-orm";
-import type { Db } from "@pioneeros/db";
-import { agents, issues } from "@pioneeros/db";
+import type { Db } from "@ardonex/db";
+import { agents, issues } from "@ardonex/db";
 import type { Request } from "express";
 import { forbidden } from "../errors.js";
 import { assertCompanyAccess } from "./authz.js";

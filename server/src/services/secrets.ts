@@ -1,5 +1,5 @@
 import { and, desc, eq, inArray, like, ne, notInArray, sql } from "drizzle-orm";
-import type { Db } from "@pioneeros/db";
+import type { Db } from "@ardonex/db";
 import {
   agents,
   companySecretBindings,
@@ -12,7 +12,7 @@ import {
   projects,
   routines,
   secretAccessEvents,
-} from "@pioneeros/db";
+} from "@ardonex/db";
 import type {
   AgentEnvConfig,
   CompanySecretBindingTarget,
@@ -26,7 +26,7 @@ import type {
   SecretProviderConfigHealthStatus,
   SecretProviderConfigStatus,
   SecretVersionSelector,
-} from "@pioneeros/shared";
+} from "@ardonex/shared";
 import {
   createSecretProviderConfigSchema,
   deriveProjectUrlKey,
@@ -35,7 +35,7 @@ import {
   normalizeAgentUrlKey,
   secretProviderConfigPayloadSchema,
   updateSecretProviderConfigSchema,
-} from "@pioneeros/shared";
+} from "@ardonex/shared";
 import { conflict, HttpError, notFound, unprocessable } from "../errors.js";
 import { logger } from "../middleware/logger.js";
 import {

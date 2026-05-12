@@ -9,9 +9,10 @@ import {
   type SDKAgent,
   type SDKMessage,
 } from "@cursor/sdk";
-import type { AdapterExecutionContext, AdapterExecutionResult, AdapterInvocationMeta } from "@pioneeros/adapter-utils";
+import type { AdapterExecutionContext, AdapterExecutionResult, AdapterInvocationMeta } from "@ardonex/adapter-utils";
 import {
   DEFAULT_PAPERCLIP_AGENT_PROMPT_TEMPLATE,
+  addPioneerAliases,
   asBoolean,
   asString,
   buildPaperclipEnv,
@@ -21,7 +22,7 @@ import {
   renderPaperclipWakePrompt,
   renderTemplate,
   stringifyPaperclipWakePayload,
-} from "@pioneeros/adapter-utils/server-utils";
+} from "@ardonex/adapter-utils/server-utils";
 
 type CursorCloudSession = {
   cursorAgentId: string;
@@ -148,6 +149,7 @@ function buildWakeEnv(ctx: AdapterExecutionContext, configEnv: Record<string, st
   }
 
   delete env.CURSOR_API_KEY;
+  addPioneerAliases(env);
   return env;
 }
 

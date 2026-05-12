@@ -20,7 +20,7 @@ import type {
   PreviewIssueTreeControl,
   ReleaseIssueTreeHold,
   UpsertIssueDocument,
-} from "@pioneeros/shared";
+} from "@ardonex/shared";
 import { api } from "./client";
 
 export type IssueUpdateResponse = Issue & {

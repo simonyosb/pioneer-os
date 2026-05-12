@@ -1,4 +1,4 @@
-import type { AdapterModel } from "@pioneeros/adapter-utils";
+import type { AdapterModel } from "@ardonex/adapter-utils";
 
 export const type = "acpx_local";
 export const label = "ACPX (local)";

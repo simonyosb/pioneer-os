@@ -1,4 +1,4 @@
-import type { ActivityEvent } from "@pioneeros/shared";
+import type { ActivityEvent } from "@ardonex/shared";
 
 export interface IssueTimelineAssignee {
   agentId: string | null;

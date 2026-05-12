@@ -1,7 +1,7 @@
 import { and, desc, eq, isNull, sql } from "drizzle-orm";
 import type { SQL } from "drizzle-orm";
-import type { Db } from "@pioneeros/db";
-import { agents, companies, issues, projects } from "@pioneeros/db";
+import type { Db } from "@ardonex/db";
+import { agents, companies, issues, projects } from "@ardonex/db";
 import {
   COMPANY_SEARCH_MAX_LIMIT,
   COMPANY_SEARCH_MAX_OFFSET,
@@ -13,7 +13,7 @@ import {
   type CompanySearchResultType,
   type CompanySearchScope,
   type CompanySearchSnippet,
-} from "@pioneeros/shared";
+} from "@ardonex/shared";
 
 const MIN_TOKEN_LENGTH = 2;
 const MIN_FUZZY_QUERY_LENGTH = 4;

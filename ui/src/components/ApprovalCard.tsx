@@ -11,7 +11,7 @@ import {
   typeLabel,
 } from "./ApprovalPayload";
 import { timeAgo } from "../lib/timeAgo";
-import type { Approval, Agent } from "@pioneeros/shared";
+import type { Approval, Agent } from "@ardonex/shared";
 import { cn } from "@/lib/utils";
 
 function statusIcon(status: string) {

@@ -1,4 +1,4 @@
-import type { RoutineTrigger } from "@pioneeros/shared";
+import type { RoutineTrigger } from "@ardonex/shared";
 
 export type RoutineTriggerEditorDraft = {
   label: string;

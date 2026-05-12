@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import type { FeedbackDataSharingPreference, FeedbackVoteValue } from "@pioneeros/shared";
+import type { FeedbackDataSharingPreference, FeedbackVoteValue } from "@ardonex/shared";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import {

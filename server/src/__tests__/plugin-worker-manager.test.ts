@@ -1,11 +1,11 @@
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it, vi } from "vitest";
-import type { PaperclipPluginManifestV1 } from "@pioneeros/shared";
+import type { PaperclipPluginManifestV1 } from "@ardonex/shared";
 import {
   JsonRpcCallError,
   type HostToWorkerMethods,
-} from "@pioneeros/plugin-sdk";
+} from "@ardonex/plugin-sdk";
 import {
   appendStderrExcerpt,
   createPluginWorkerHandle,

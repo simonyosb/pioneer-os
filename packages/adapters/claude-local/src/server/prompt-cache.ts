@@ -2,12 +2,12 @@ import { constants as fsConstants } from "node:fs";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { createHash, type Hash } from "node:crypto";
-import type { AdapterExecutionContext } from "@pioneeros/adapter-utils";
+import type { AdapterExecutionContext } from "@ardonex/adapter-utils";
 import {
   ensurePaperclipSkillSymlink,
   resolvePaperclipInstanceRootForAdapter,
   type PaperclipSkillEntry,
-} from "@pioneeros/adapter-utils/server-utils";
+} from "@ardonex/adapter-utils/server-utils";
 
 type SkillEntry = PaperclipSkillEntry;
 

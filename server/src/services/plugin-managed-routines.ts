@@ -1,5 +1,5 @@
 import { and, eq } from "drizzle-orm";
-import type { Db } from "@pioneeros/db";
+import type { Db } from "@ardonex/db";
 import {
   agents,
   pluginManagedResources,
@@ -7,7 +7,7 @@ import {
   projects,
   routines,
   routineTriggers,
-} from "@pioneeros/db";
+} from "@ardonex/db";
 import type {
   CreateRoutineTrigger,
   PluginManagedResourceRef,
@@ -16,8 +16,8 @@ import type {
   Routine,
   RoutineManagedByPlugin,
   RoutineStatus,
-} from "@pioneeros/shared";
-import { ROUTINE_STATUSES } from "@pioneeros/shared";
+} from "@ardonex/shared";
+import { ROUTINE_STATUSES } from "@ardonex/shared";
 import { notFound, unprocessable } from "../errors.js";
 import { logActivity } from "./activity-log.js";
 import { routineService } from "./routines.js";
@@ -28,7 +28,7 @@ const MANAGED_ROUTINE_RESOURCE_KIND = "routine";
 interface PluginManagedRoutineServiceOptions {
   pluginId: string;
   pluginKey: string;
-  manifest?: import("@pioneeros/shared").PaperclipPluginManifestV1 | null;
+  manifest?: import("@ardonex/shared").PaperclipPluginManifestV1 | null;
   pluginWorkerManager?: PluginWorkerManager;
 }
 

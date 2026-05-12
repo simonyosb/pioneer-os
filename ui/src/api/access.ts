@@ -1,4 +1,4 @@
-import type { AgentAdapterType, JoinRequest, PermissionKey } from "@pioneeros/shared";
+import type { AgentAdapterType, JoinRequest, PermissionKey } from "@ardonex/shared";
 import { api } from "./client";
 
 export type HumanCompanyRole = "owner" | "admin" | "operator" | "viewer";

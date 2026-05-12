@@ -10,8 +10,8 @@ import {
   issueDocuments,
   issues,
   projects,
-} from "@pioneeros/db";
-import { companySearchQuerySchema, COMPANY_SEARCH_MAX_QUERY_LENGTH } from "@pioneeros/shared";
+} from "@ardonex/db";
+import { companySearchQuerySchema, COMPANY_SEARCH_MAX_QUERY_LENGTH } from "@ardonex/shared";
 import {
   getEmbeddedPostgresTestSupport,
   startEmbeddedPostgresTestDatabase,

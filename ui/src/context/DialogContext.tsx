@@ -1,5 +1,5 @@
 import { createContext, useCallback, useContext, useMemo, useState, type ReactNode } from "react";
-import type { IssueWorkMode } from "@pioneeros/shared";
+import type { IssueWorkMode } from "@ardonex/shared";
 
 interface NewIssueDefaults {
   status?: string;

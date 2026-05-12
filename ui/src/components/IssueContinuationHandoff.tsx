@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import type { IssueDocument } from "@pioneeros/shared";
-import { ISSUE_CONTINUATION_SUMMARY_DOCUMENT_KEY } from "@pioneeros/shared";
+import type { IssueDocument } from "@ardonex/shared";
+import { ISSUE_CONTINUATION_SUMMARY_DOCUMENT_KEY } from "@ardonex/shared";
 import { Button } from "@/components/ui/button";
 import { cn, relativeTime } from "../lib/utils";
 import { MarkdownBody } from "./MarkdownBody";

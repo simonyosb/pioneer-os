@@ -1,18 +1,18 @@
 import type { ComponentType } from "react";
-import type { CreateConfigValues } from "@pioneeros/adapter-utils";
+import type { CreateConfigValues } from "@ardonex/adapter-utils";
 
 // Re-export shared types so local consumers don't need to change imports
-export type { TranscriptEntry, StdoutLineParser, CreateConfigValues } from "@pioneeros/adapter-utils";
+export type { TranscriptEntry, StdoutLineParser, CreateConfigValues } from "@ardonex/adapter-utils";
 
 export interface StatefulStdoutParser {
-  parseLine: (line: string, ts: string) => import("@pioneeros/adapter-utils").TranscriptEntry[];
+  parseLine: (line: string, ts: string) => import("@ardonex/adapter-utils").TranscriptEntry[];
   reset: () => void;
 }
 
 export type StdoutParserFactory = () => StatefulStdoutParser;
 
 export interface TranscriptParserSource {
-  parseStdoutLine: (line: string, ts: string) => import("@pioneeros/adapter-utils").TranscriptEntry[];
+  parseStdoutLine: (line: string, ts: string) => import("@ardonex/adapter-utils").TranscriptEntry[];
   createStdoutParser?: StdoutParserFactory;
 }
 

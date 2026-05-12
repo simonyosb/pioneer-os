@@ -1,4 +1,4 @@
-import type { PaperclipPluginManifestV1 } from "@pioneeros/plugin-sdk";
+import type { PaperclipPluginManifestV1 } from "@ardonex/plugin-sdk";
 
 const PLUGIN_ID = "paperclip-file-browser-example";
 const FILES_SIDEBAR_SLOT_ID = "files-link";

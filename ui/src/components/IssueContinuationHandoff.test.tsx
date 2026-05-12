@@ -3,8 +3,8 @@
 import { act } from "react";
 import type { ComponentProps } from "react";
 import { createRoot } from "react-dom/client";
-import type { IssueDocument } from "@pioneeros/shared";
-import { ISSUE_CONTINUATION_SUMMARY_DOCUMENT_KEY } from "@pioneeros/shared";
+import type { IssueDocument } from "@ardonex/shared";
+import { ISSUE_CONTINUATION_SUMMARY_DOCUMENT_KEY } from "@ardonex/shared";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { IssueContinuationHandoff } from "./IssueContinuationHandoff";
 

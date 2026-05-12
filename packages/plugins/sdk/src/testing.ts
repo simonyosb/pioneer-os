@@ -1,5 +1,5 @@
 import { randomUUID } from "node:crypto";
-import { pluginOperationIssueOriginKind } from "@pioneeros/shared";
+import { pluginOperationIssueOriginKind } from "@ardonex/shared";
 import type {
   PaperclipPluginManifestV1,
   PluginCapability,
@@ -20,7 +20,7 @@ import type {
   IssueDocument,
   Agent,
   Goal,
-} from "@pioneeros/shared";
+} from "@ardonex/shared";
 import type {
   EventFilter,
   PluginContext,

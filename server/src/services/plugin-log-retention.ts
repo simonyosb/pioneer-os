@@ -1,6 +1,6 @@
 import { lt, sql } from "drizzle-orm";
-import type { Db } from "@pioneeros/db";
-import { pluginLogs } from "@pioneeros/db";
+import type { Db } from "@ardonex/db";
+import { pluginLogs } from "@ardonex/db";
 import { logger } from "../middleware/logger.js";
 
 /** Default retention period: 7 days. */

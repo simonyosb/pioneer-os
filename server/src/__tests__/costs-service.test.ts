@@ -13,7 +13,7 @@ import {
   heartbeatRuns,
   issues,
   projects,
-} from "@pioneeros/db";
+} from "@ardonex/db";
 import { costService } from "../services/costs.ts";
 import { financeService } from "../services/finance.ts";
 import {

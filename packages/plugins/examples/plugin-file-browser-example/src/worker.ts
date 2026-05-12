@@ -1,4 +1,4 @@
-import { definePlugin, runWorker } from "@pioneeros/plugin-sdk";
+import { definePlugin, runWorker } from "@ardonex/plugin-sdk";
 import * as fs from "node:fs";
 import * as path from "node:path";
 

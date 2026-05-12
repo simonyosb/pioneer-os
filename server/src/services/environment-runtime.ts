@@ -1,7 +1,7 @@
 import { randomUUID } from "node:crypto";
 import { and, eq, inArray } from "drizzle-orm";
-import type { Db } from "@pioneeros/db";
-import { environmentLeases } from "@pioneeros/db";
+import type { Db } from "@ardonex/db";
+import { environmentLeases } from "@ardonex/db";
 import type {
   Environment,
   EnvironmentLease,
@@ -9,13 +9,13 @@ import type {
   ExecutionWorkspace,
   PluginEnvironmentConfig,
   SandboxEnvironmentConfig,
-} from "@pioneeros/shared";
+} from "@ardonex/shared";
 import type {
   PluginEnvironmentExecuteResult,
   PluginEnvironmentLease,
   PluginEnvironmentRealizeWorkspaceResult,
-} from "@pioneeros/plugin-sdk";
-import { ensureSshWorkspaceReady } from "@pioneeros/adapter-utils/ssh";
+} from "@ardonex/plugin-sdk";
+import { ensureSshWorkspaceReady } from "@ardonex/adapter-utils/ssh";
 import { environmentService } from "./environments.js";
 import {
   parseEnvironmentDriverConfig,

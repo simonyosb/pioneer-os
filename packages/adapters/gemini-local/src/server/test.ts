@@ -3,7 +3,7 @@ import type {
   AdapterEnvironmentCheck,
   AdapterEnvironmentTestContext,
   AdapterEnvironmentTestResult,
-} from "@pioneeros/adapter-utils";
+} from "@ardonex/adapter-utils";
 import {
   asBoolean,
   asNumber,
@@ -11,7 +11,7 @@ import {
   asStringArray,
   ensurePathInEnv,
   parseObject,
-} from "@pioneeros/adapter-utils/server-utils";
+} from "@ardonex/adapter-utils/server-utils";
 import {
   ensureAdapterExecutionTargetCommandResolvable,
   maybeRunSandboxInstallCommand,
@@ -19,7 +19,7 @@ import {
   runAdapterExecutionTargetProcess,
   describeAdapterExecutionTarget,
   resolveAdapterExecutionTargetCwd,
-} from "@pioneeros/adapter-utils/execution-target";
+} from "@ardonex/adapter-utils/execution-target";
 import { DEFAULT_GEMINI_LOCAL_MODEL, SANDBOX_INSTALL_COMMAND } from "../index.js";
 import { detectGeminiAuthRequired, detectGeminiQuotaExhausted, parseGeminiJsonl } from "./parse.js";
 import { firstNonEmptyLine } from "./utils.js";

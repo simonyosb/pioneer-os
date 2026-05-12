@@ -3,8 +3,8 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { promisify } from "node:util";
 import { and, desc, eq, inArray } from "drizzle-orm";
-import type { Db } from "@pioneeros/db";
-import { executionWorkspaces, issues, projects, projectWorkspaces, workspaceRuntimeServices } from "@pioneeros/db";
+import type { Db } from "@ardonex/db";
+import { executionWorkspaces, issues, projects, projectWorkspaces, workspaceRuntimeServices } from "@ardonex/db";
 import type {
   ExecutionWorkspace,
   ExecutionWorkspaceSummary,
@@ -14,7 +14,7 @@ import type {
   ExecutionWorkspaceConfig,
   WorkspaceRuntimeDesiredState,
   WorkspaceRuntimeService,
-} from "@pioneeros/shared";
+} from "@ardonex/shared";
 import { parseProjectExecutionWorkspacePolicy } from "./execution-workspace-policy.js";
 import {
   listCurrentRuntimeServicesForExecutionWorkspaces,

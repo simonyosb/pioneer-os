@@ -1,4 +1,4 @@
-import type { Issue, IssueComment } from "@pioneeros/shared";
+import type { Issue, IssueComment } from "@ardonex/shared";
 
 export interface IssueCommentReassignment {
   assigneeAgentId: string | null;

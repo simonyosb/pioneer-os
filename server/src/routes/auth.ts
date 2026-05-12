@@ -1,12 +1,12 @@
 import { Router } from "express";
 import { eq } from "drizzle-orm";
-import type { Db } from "@pioneeros/db";
-import { authUsers } from "@pioneeros/db";
+import type { Db } from "@ardonex/db";
+import { authUsers } from "@ardonex/db";
 import {
   authSessionSchema,
   currentUserProfileSchema,
   updateCurrentUserProfileSchema,
-} from "@pioneeros/shared";
+} from "@ardonex/shared";
 import { unauthorized } from "../errors.js";
 import { validate } from "../middleware/validate.js";
 

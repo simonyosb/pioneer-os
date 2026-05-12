@@ -1,11 +1,11 @@
 import { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { AGENT_STATUSES, ISSUE_PRIORITIES, ISSUE_STATUSES } from "@pioneeros/shared";
+import { AGENT_STATUSES, ISSUE_PRIORITIES, ISSUE_STATUSES } from "@ardonex/shared";
 import type {
   IssueBlockerAttention,
   IssueProductivityReview,
   IssueRelationIssueSummary,
-} from "@pioneeros/shared";
+} from "@ardonex/shared";
 import { Bot, CheckCircle2, Clock3, DollarSign, FolderKanban, Inbox, MessageSquare, Users } from "lucide-react";
 import { CopyText } from "@/components/CopyText";
 import { EmptyState } from "@/components/EmptyState";

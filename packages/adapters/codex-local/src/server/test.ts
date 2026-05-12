@@ -2,12 +2,12 @@ import type {
   AdapterEnvironmentCheck,
   AdapterEnvironmentTestContext,
   AdapterEnvironmentTestResult,
-} from "@pioneeros/adapter-utils";
+} from "@ardonex/adapter-utils";
 import {
   asString,
   parseObject,
   ensurePathInEnv,
-} from "@pioneeros/adapter-utils/server-utils";
+} from "@ardonex/adapter-utils/server-utils";
 import {
   ensureAdapterExecutionTargetCommandResolvable,
   ensureAdapterExecutionTargetDirectory,
@@ -16,7 +16,7 @@ import {
   describeAdapterExecutionTarget,
   resolveAdapterExecutionTargetCwd,
   prepareAdapterExecutionTargetRuntime,
-} from "@pioneeros/adapter-utils/execution-target";
+} from "@ardonex/adapter-utils/execution-target";
 import fs from "node:fs/promises";
 import path from "node:path";
 import os from "node:os";

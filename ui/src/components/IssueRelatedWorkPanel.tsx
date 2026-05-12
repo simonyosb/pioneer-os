@@ -1,4 +1,4 @@
-import type { IssueRelatedWorkItem, IssueRelatedWorkSummary } from "@pioneeros/shared";
+import type { IssueRelatedWorkItem, IssueRelatedWorkSummary } from "@ardonex/shared";
 import { IssueReferencePill } from "./IssueReferencePill";
 
 type GroupedSource = {

@@ -22,7 +22,7 @@ try {
   if (stat.isSymbolicLink()) {
     rmSync(linkTarget, { force: true });
   } else {
-    console.log("  i Keeping existing installed @pioneeros/plugin-sdk directory in place");
+    console.log("  i Keeping existing installed @ardonex/plugin-sdk directory in place");
     process.exit(0);
   }
 } catch {
@@ -32,4 +32,4 @@ try {
 const relativeSdkDir = relative(scopeDir, sdkDir);
 symlinkSync(relativeSdkDir, linkTarget, "dir");
 
-console.log(`  ✓ Linked local @pioneeros/plugin-sdk for ${packageDir}`);
+console.log(`  ✓ Linked local @ardonex/plugin-sdk for ${packageDir}`);

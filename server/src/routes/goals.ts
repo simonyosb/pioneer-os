@@ -1,7 +1,7 @@
 import { Router } from "express";
-import type { Db } from "@pioneeros/db";
-import { createGoalSchema, updateGoalSchema } from "@pioneeros/shared";
-import { trackGoalCreated } from "@pioneeros/shared/telemetry";
+import type { Db } from "@ardonex/db";
+import { createGoalSchema, updateGoalSchema } from "@ardonex/shared";
+import { trackGoalCreated } from "@ardonex/shared/telemetry";
 import { validate } from "../middleware/validate.js";
 import { goalService, logActivity } from "../services/index.js";
 import { assertCompanyAccess, getActorInfo } from "./authz.js";

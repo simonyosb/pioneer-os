@@ -65,7 +65,7 @@ function createBootstrapInvite() {
     pnpmCommand,
     [
       "--filter",
-      "@pioneeros/db",
+      "@ardonex/db",
       "exec",
       "tsx",
       BOOTSTRAP_SCRIPT_PATH,

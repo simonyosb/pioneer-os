@@ -1,8 +1,8 @@
 import { randomUUID } from "node:crypto";
-import type { Db } from "@pioneeros/db";
-import { activityLog } from "@pioneeros/db";
-import { PLUGIN_EVENT_TYPES, type PluginEventType } from "@pioneeros/shared";
-import type { PluginEvent } from "@pioneeros/plugin-sdk";
+import type { Db } from "@ardonex/db";
+import { activityLog } from "@ardonex/db";
+import { PLUGIN_EVENT_TYPES, type PluginEventType } from "@ardonex/shared";
+import type { PluginEvent } from "@ardonex/plugin-sdk";
 import { publishLiveEvent } from "./live-events.js";
 import { redactCurrentUserValue } from "../log-redaction.js";
 import { sanitizeRecord } from "../redaction.js";

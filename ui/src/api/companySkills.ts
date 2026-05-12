@@ -8,7 +8,7 @@ import type {
   CompanySkillProjectScanRequest,
   CompanySkillProjectScanResult,
   CompanySkillUpdateStatus,
-} from "@pioneeros/shared";
+} from "@ardonex/shared";
 import { api } from "./client";
 
 export const companySkillsApi = {

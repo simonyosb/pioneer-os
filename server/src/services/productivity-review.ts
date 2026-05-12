@@ -1,6 +1,6 @@
 import { and, asc, desc, eq, gt, inArray, isNull, notInArray, sql } from "drizzle-orm";
-import type { Db } from "@pioneeros/db";
-import { clampIssueRequestDepth } from "@pioneeros/shared";
+import type { Db } from "@ardonex/db";
+import { clampIssueRequestDepth } from "@ardonex/shared";
 import {
   agents,
   companies,
@@ -9,7 +9,7 @@ import {
   issueComments,
   issues,
   projects,
-} from "@pioneeros/db";
+} from "@ardonex/db";
 import { logger } from "../middleware/logger.js";
 import { logActivity } from "./activity-log.js";
 import { budgetService } from "./budgets.js";

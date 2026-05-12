@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { z } from "zod";
-import type { Db } from "@pioneeros/db";
-import { normalizeIssueIdentifier } from "@pioneeros/shared";
+import type { Db } from "@ardonex/db";
+import { normalizeIssueIdentifier } from "@ardonex/shared";
 import { validate } from "../middleware/validate.js";
 import { activityService, normalizeActivityLimit } from "../services/activity.js";
 import { assertAuthenticated, assertBoard, assertCompanyAccess } from "./authz.js";

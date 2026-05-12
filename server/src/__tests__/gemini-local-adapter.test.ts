@@ -3,9 +3,9 @@ import {
   isGeminiTurnLimitResult,
   isGeminiUnknownSessionError,
   parseGeminiJsonl,
-} from "@pioneeros/adapter-gemini-local/server";
-import { parseGeminiStdoutLine } from "@pioneeros/adapter-gemini-local/ui";
-import { printGeminiStreamEvent } from "@pioneeros/adapter-gemini-local/cli";
+} from "@ardonex/adapter-gemini-local/server";
+import { parseGeminiStdoutLine } from "@ardonex/adapter-gemini-local/ui";
+import { printGeminiStreamEvent } from "@ardonex/adapter-gemini-local/cli";
 
 describe("gemini_local parser", () => {
   it("extracts session, summary, usage, cost, and terminal error message from v0.38 stream-json output", () => {

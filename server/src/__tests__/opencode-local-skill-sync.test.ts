@@ -5,7 +5,7 @@ import { afterEach, describe, expect, it } from "vitest";
 import {
   listOpenCodeSkills,
   syncOpenCodeSkills,
-} from "@pioneeros/adapter-opencode-local/server";
+} from "@ardonex/adapter-opencode-local/server";
 
 async function makeTempDir(prefix: string): Promise<string> {
   return fs.mkdtemp(path.join(os.tmpdir(), prefix));

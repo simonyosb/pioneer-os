@@ -1,4 +1,4 @@
-import type { Approval, ApprovalComment, Issue } from "@pioneeros/shared";
+import type { Approval, ApprovalComment, Issue } from "@ardonex/shared";
 import { api } from "./client";
 
 export const approvalsApi = {

@@ -7,8 +7,8 @@ import type {
   FeedbackVoteValue,
   Issue,
   IssueDocument,
-} from "@pioneeros/shared";
-import { isSystemIssueDocumentKey } from "@pioneeros/shared";
+} from "@ardonex/shared";
+import { isSystemIssueDocumentKey } from "@ardonex/shared";
 import { useLocation } from "@/lib/router";
 import { ApiError } from "../api/client";
 import { issuesApi } from "../api/issues";

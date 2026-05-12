@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Dialog as DialogPrimitive } from "radix-ui";
 import { ChevronLeft, ChevronRight, Download, X } from "lucide-react";
-import type { IssueAttachment } from "@pioneeros/shared";
+import type { IssueAttachment } from "@ardonex/shared";
 
 interface ImageGalleryModalProps {
   images: IssueAttachment[];

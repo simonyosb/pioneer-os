@@ -1,7 +1,7 @@
 import express from "express";
 import request from "supertest";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { DEFAULT_OPENCODE_LOCAL_MODEL } from "@pioneeros/adapter-opencode-local";
+import { DEFAULT_OPENCODE_LOCAL_MODEL } from "@ardonex/adapter-opencode-local";
 
 vi.mock("acpx/runtime", () => ({
   createAcpRuntime: vi.fn(),
@@ -109,15 +109,15 @@ const mockInstanceSettingsService = vi.hoisted(() => ({
 }));
 
 function registerModuleMocks() {
-  vi.doMock("@pioneeros/adapter-opencode-local/server", async () => {
-    const actual = await vi.importActual<typeof import("@pioneeros/adapter-opencode-local/server")>("@pioneeros/adapter-opencode-local/server");
+  vi.doMock("@ardonex/adapter-opencode-local/server", async () => {
+    const actual = await vi.importActual<typeof import("@ardonex/adapter-opencode-local/server")>("@ardonex/adapter-opencode-local/server");
     return {
       ...actual,
       ensureOpenCodeModelConfiguredAndAvailable: mockEnsureOpenCodeModelConfiguredAndAvailable,
     };
   });
 
-  vi.doMock("@pioneeros/shared/telemetry", () => ({
+  vi.doMock("@ardonex/shared/telemetry", () => ({
     trackAgentCreated: mockTrackAgentCreated,
     trackErrorHandlerCrash: vi.fn(),
   }));
@@ -269,7 +269,7 @@ async function requestApp(
 describe.sequential("agent permission routes", () => {
   beforeEach(() => {
     vi.resetModules();
-    vi.doUnmock("@pioneeros/shared/telemetry");
+    vi.doUnmock("@ardonex/shared/telemetry");
     vi.doUnmock("../telemetry.js");
     vi.doUnmock("../services/access.js");
     vi.doUnmock("../services/activity-log.js");
@@ -290,7 +290,7 @@ describe.sequential("agent permission routes", () => {
     vi.doUnmock("../routes/agents.js");
     vi.doUnmock("../routes/authz.js");
     vi.doUnmock("../middleware/index.js");
-    vi.doUnmock("@pioneeros/adapter-opencode-local/server");
+    vi.doUnmock("@ardonex/adapter-opencode-local/server");
     registerModuleMocks();
     vi.resetAllMocks();
     mockAgentService.getById.mockReset();

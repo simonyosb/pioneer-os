@@ -1,4 +1,4 @@
-import type { Issue } from "@pioneeros/shared";
+import type { Issue } from "@ardonex/shared";
 import type { ActiveRunForIssue } from "../api/heartbeats";
 
 export function shouldTrackIssueActiveRun(

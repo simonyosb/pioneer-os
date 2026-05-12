@@ -5,7 +5,7 @@ const mockProbePluginEnvironmentDriver = vi.hoisted(() => vi.fn());
 const mockProbePluginSandboxProviderDriver = vi.hoisted(() => vi.fn());
 const mockResolvePluginSandboxProviderDriverByKey = vi.hoisted(() => vi.fn());
 
-vi.mock("@pioneeros/adapter-utils/ssh", () => ({
+vi.mock("@ardonex/adapter-utils/ssh", () => ({
   ensureSshWorkspaceReady: mockEnsureSshWorkspaceReady,
 }));
 

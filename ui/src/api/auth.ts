@@ -4,7 +4,7 @@ import {
   type AuthSession,
   type CurrentUserProfile,
   type UpdateCurrentUserProfile,
-} from "@pioneeros/shared";
+} from "@ardonex/shared";
 
 type AuthErrorBody =
   | {

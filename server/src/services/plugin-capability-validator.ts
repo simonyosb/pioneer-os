@@ -24,7 +24,7 @@ import type {
   PaperclipPluginManifestV1,
   PluginUiSlotType,
   PluginLauncherPlacementZone,
-} from "@pioneeros/shared";
+} from "@ardonex/shared";
 import { forbidden } from "../errors.js";
 import { logger } from "../middleware/logger.js";
 

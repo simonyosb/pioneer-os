@@ -9,7 +9,7 @@ import {
   startSshEnvLabFixture,
   stopSshEnvLabFixture,
   type SshConnectionConfig,
-} from "@pioneeros/adapter-utils/ssh";
+} from "@ardonex/adapter-utils/ssh";
 
 async function readOptionalSecret(
   value: string | undefined,

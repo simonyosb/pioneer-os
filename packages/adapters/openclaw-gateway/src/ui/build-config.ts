@@ -1,4 +1,4 @@
-import type { CreateConfigValues } from "@pioneeros/adapter-utils";
+import type { CreateConfigValues } from "@ardonex/adapter-utils";
 
 function parseJsonObject(text: string): Record<string, unknown> | null {
   const trimmed = text.trim();

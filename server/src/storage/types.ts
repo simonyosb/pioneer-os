@@ -1,4 +1,4 @@
-import type { StorageProvider as StorageProviderId } from "@pioneeros/shared";
+import type { StorageProvider as StorageProviderId } from "@ardonex/shared";
 import type { Readable } from "node:stream";
 
 export interface PutObjectInput {

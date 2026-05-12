@@ -1,4 +1,4 @@
-import { AGENT_DEFAULT_MAX_CONCURRENT_RUNS } from "@pioneeros/shared";
+import { AGENT_DEFAULT_MAX_CONCURRENT_RUNS } from "@ardonex/shared";
 import { defaultCreateValues } from "../components/agent-config-defaults";
 
 export function buildNewAgentRuntimeConfig(input?: {

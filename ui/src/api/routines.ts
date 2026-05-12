@@ -8,7 +8,7 @@ import type {
   RoutineRunSummary,
   RoutineTrigger,
   RoutineTriggerSecretMaterial,
-} from "@pioneeros/shared";
+} from "@ardonex/shared";
 import { activityApi } from "./activity";
 import { api } from "./client";
 

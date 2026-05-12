@@ -1,9 +1,9 @@
-import type { Db } from "@pioneeros/db";
-import type { Environment, EnvironmentLease } from "@pioneeros/shared";
+import type { Db } from "@ardonex/db";
+import type { Environment, EnvironmentLease } from "@ardonex/shared";
 import {
   adapterExecutionTargetToRemoteSpec,
   type AdapterExecutionTarget,
-} from "@pioneeros/adapter-utils/execution-target";
+} from "@ardonex/adapter-utils/execution-target";
 import { parseObject } from "../adapters/utils.js";
 import { resolveEnvironmentDriverConfigForRuntime } from "./environment-config.js";
 import type { EnvironmentRuntimeService } from "./environment-runtime.js";

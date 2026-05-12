@@ -5,7 +5,7 @@ import type {
   InboxDismissal,
   Issue,
   JoinRequest,
-} from "@pioneeros/shared";
+} from "@ardonex/shared";
 import {
   applyIssueFilters,
   defaultIssueFilterState,

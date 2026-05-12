@@ -14,8 +14,8 @@ import {
   routineRuns,
   routineTriggers,
   routines,
-} from "@pioneeros/db";
-import type { PaperclipPluginManifestV1 } from "@pioneeros/shared";
+} from "@ardonex/db";
+import type { PaperclipPluginManifestV1 } from "@ardonex/shared";
 import {
   getEmbeddedPostgresTestSupport,
   startEmbeddedPostgresTestDatabase,
@@ -134,7 +134,7 @@ describeEmbeddedPostgres("plugin-managed routines", () => {
     await db.insert(plugins).values({
       id: pluginId,
       pluginKey: pluginManifest.id,
-      packageName: "@pioneeros/plugin-managed-routines-test",
+      packageName: "@ardonex/plugin-managed-routines-test",
       version: pluginManifest.version,
       apiVersion: pluginManifest.apiVersion,
       categories: pluginManifest.categories,

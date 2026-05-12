@@ -18,20 +18,20 @@ import type {
   SecretProviderDescriptor,
   SidebarBadges,
   WorkspaceRuntimeService,
-} from "@pioneeros/shared";
+} from "@ardonex/shared";
 import type { RunForIssue } from "@/api/activity";
 import type { LiveRunForIssue } from "@/api/heartbeats";
 
 const now = new Date("2026-04-20T12:00:00.000Z");
 const recent = (minutesAgo: number) => new Date(now.getTime() - minutesAgo * 60_000);
-const storybookRepoRoot = "~/pioneer-os";
-const storybookWorkspaceRoot = `${storybookRepoRoot}/.pioneeros/workspaces`;
-const storybookWorktreeRoot = `${storybookRepoRoot}/.pioneeros/worktrees`;
+const storybookRepoRoot = "~/ardonex";
+const storybookWorkspaceRoot = `${storybookRepoRoot}/.ardonex/workspaces`;
+const storybookWorktreeRoot = `${storybookRepoRoot}/.ardonex/worktrees`;
 
 export const storybookCompanies: Company[] = [
   {
     id: "company-storybook",
-    name: "Pioneer OS Storybook",
+    name: "Ardonex Storybook",
     description: "Fixture company for isolated UI review.",
     status: "active",
     pauseReason: null,
@@ -108,7 +108,7 @@ export const storybookAuthSession: AuthSession = {
   user: {
     id: "user-board",
     name: "Riley Board",
-    email: "riley@pioneeros.local",
+    email: "riley@ardonex.local",
     image: null,
   },
 };
@@ -124,7 +124,7 @@ export const storybookAgents: Agent[] = [
     icon: "code",
     status: "running",
     reportsTo: "agent-cto",
-    capabilities: "Ships full-stack Pioneer OS product tasks, Storybook coverage, and verification.",
+    capabilities: "Ships full-stack Ardonex product tasks, Storybook coverage, and verification.",
     adapterType: "codex_local",
     adapterConfig: {},
     runtimeConfig: {},
@@ -235,8 +235,8 @@ export const storybookGoals: Goal[] = [
   {
     id: "goal-company",
     companyId: "company-storybook",
-    title: "Build Pioneer OS",
-    description: "Make Pioneer OS the control plane operators trust for autonomous AI companies.",
+    title: "Build Ardonex",
+    description: "Make Ardonex the control plane operators trust for autonomous AI companies.",
     level: "company",
     status: "active",
     parentId: null,
@@ -355,7 +355,7 @@ const storybookWorkspaceRuntime = {
       id: "typecheck-ui",
       name: "UI typecheck",
       kind: "job",
-      command: "pnpm --filter @pioneeros/ui typecheck",
+      command: "pnpm --filter @ardonex/ui typecheck",
       cwd: ".",
     },
   ],
@@ -369,7 +369,7 @@ export const storybookProjectWorkspaces: Project["workspaces"] = [
     name: "Board UI",
     sourceType: "local_path" as const,
     cwd: `${storybookRepoRoot}/ui`,
-    repoUrl: "https://github.com/pioneeros/pioneer-os",
+    repoUrl: "https://github.com/ardonex/ardonex",
     repoRef: "master",
     defaultRef: "master",
     visibility: "default" as const,
@@ -396,7 +396,7 @@ export const storybookProjectWorkspaces: Project["workspaces"] = [
     name: "Docs preview sandbox",
     sourceType: "remote_managed",
     cwd: null,
-    repoUrl: "https://github.com/pioneeros/pioneer-os",
+    repoUrl: "https://github.com/ardonex/ardonex",
     repoRef: "preview/docs-workspaces",
     defaultRef: "master",
     visibility: "advanced",
@@ -438,7 +438,7 @@ export const storybookProjectWorkspaces: Project["workspaces"] = [
         command: "pnpm docs:dev",
         cwd: null,
         port: 4173,
-        url: "https://pioneer-os-docs-preview.vercel.app",
+        url: "https://ardonex-docs-preview.vercel.app",
         healthStatus: "unknown",
         lastUsedAt: recent(48),
         startedAt: recent(72),
@@ -457,7 +457,7 @@ export const storybookProjectWorkspaces: Project["workspaces"] = [
     name: "Release smoke local checkout",
     sourceType: "local_path",
     cwd: `${storybookWorkspaceRoot}/release-smoke`,
-    repoUrl: "https://github.com/pioneeros/pioneer-os",
+    repoUrl: "https://github.com/ardonex/ardonex",
     repoRef: "release/smoke-2026-04-20",
     defaultRef: "master",
     visibility: "advanced",
@@ -501,7 +501,7 @@ export const storybookExecutionWorkspaces: ExecutionWorkspace[] = [
     name: "PAP-1641 storybook worktree",
     status: "active",
     cwd: `${storybookWorktreeRoot}/PAP-1641-create-super-detailed-storybooks-for-our-project`,
-    repoUrl: "https://github.com/pioneeros/pioneer-os",
+    repoUrl: "https://github.com/ardonex/ardonex",
     baseRef: "master",
     branchName: "PAP-1641-create-super-detailed-storybooks-for-our-project",
     providerType: "git_worktree",
@@ -529,7 +529,7 @@ export const storybookExecutionWorkspaces: ExecutionWorkspace[] = [
     name: "PAP-1608 release smoke cleanup",
     status: "cleanup_failed",
     cwd: `${storybookWorktreeRoot}/PAP-1608-release-smoke-cleanup`,
-    repoUrl: "https://github.com/pioneeros/pioneer-os",
+    repoUrl: "https://github.com/ardonex/ardonex",
     baseRef: "master",
     branchName: "PAP-1608-release-smoke-cleanup",
     providerType: "git_worktree",
@@ -612,12 +612,12 @@ function createProject(overrides: Partial<Project> = {}): Project {
     },
     codebase: {
       workspaceId: "workspace-board-ui",
-      repoUrl: "https://github.com/pioneeros/pioneer-os",
+      repoUrl: "https://github.com/ardonex/ardonex",
       repoRef: "master",
       defaultRef: "master",
-      repoName: "pioneer-os",
+      repoName: "ardonex",
       localFolder: storybookRepoRoot,
-      managedFolder: ".pioneeros/worktrees/storybook",
+      managedFolder: ".ardonex/worktrees/storybook",
       effectiveLocalFolder: storybookRepoRoot,
       origin: "local_folder",
     },
@@ -1062,7 +1062,7 @@ export const storybookApprovals: Approval[] = [
     requestedByUserId: null,
     status: "revision_requested",
     payload: {
-      scopeName: "Pioneer OS App",
+      scopeName: "Ardonex App",
       scopeType: "project",
       windowKind: "calendar_month_utc",
       metric: "billed_cents",
@@ -1107,7 +1107,7 @@ export const storybookBudgetSummaries: BudgetPolicySummary[] = [
     companyId: "company-storybook",
     scopeType: "company",
     scopeId: "company-storybook",
-    scopeName: "Pioneer OS Storybook",
+    scopeName: "Ardonex Storybook",
     metric: "billed_cents",
     windowKind: "calendar_month_utc",
     amount: 250_000,
@@ -1129,7 +1129,7 @@ export const storybookBudgetSummaries: BudgetPolicySummary[] = [
     companyId: "company-storybook",
     scopeType: "project",
     scopeId: "project-board-ui",
-    scopeName: "Pioneer OS App",
+    scopeName: "Ardonex App",
     metric: "billed_cents",
     windowKind: "calendar_month_utc",
     amount: 120_000,
@@ -1345,7 +1345,7 @@ export const storybookSecrets: CompanySecret[] = [
     provider: "aws_secrets_manager",
     status: "active",
     managedMode: "external_reference",
-    externalRef: "arn:aws:secretsmanager:us-east-1:123456789012:secret:pioneeros/prod/aws-deploy-AbCdEf",
+    externalRef: "arn:aws:secretsmanager:us-east-1:123456789012:secret:ardonex/prod/aws-deploy-AbCdEf",
     providerConfigId: null,
     providerMetadata: null,
     latestVersion: 2,
@@ -1425,7 +1425,7 @@ export const storybookSecretBindings: CompanySecretBinding[] = [
     configPath: "env.OPENAI_API_KEY",
     versionSelector: "latest",
     required: true,
-    label: "Pioneer OS App project env",
+    label: "Ardonex App project env",
     createdAt: new Date("2026-03-02T09:00:00.000Z"),
     updatedAt: new Date("2026-03-02T09:00:00.000Z"),
   },
@@ -1508,7 +1508,7 @@ export const storybookSecretProviderHealth = {
       status: "ok" as const,
       message: "Encryption key loaded; permissions OK.",
       warnings: [] as string[],
-      backupGuidance: ["Backup ~/.pioneeros/instances/default/secrets/key separately from the database."],
+      backupGuidance: ["Backup ~/.ardonex/instances/default/secrets/key separately from the database."],
     },
     {
       provider: "aws_secrets_manager" as const,

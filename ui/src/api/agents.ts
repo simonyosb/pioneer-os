@@ -12,12 +12,12 @@ import type {
   HeartbeatRun,
   Approval,
   AgentConfigRevision,
-} from "@pioneeros/shared";
+} from "@ardonex/shared";
 import type {
   AdapterModelProfileDefinition,
   AdapterModelProfileKey,
-} from "@pioneeros/adapter-utils";
-import { isUuidLike, normalizeAgentUrlKey } from "@pioneeros/shared";
+} from "@ardonex/adapter-utils";
+import { isUuidLike, normalizeAgentUrlKey } from "@ardonex/shared";
 import { ApiError, api } from "./client";
 
 export interface AgentKey {

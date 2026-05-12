@@ -1,11 +1,11 @@
 import { Router } from "express";
 import type { Request } from "express";
-import type { Db } from "@pioneeros/db";
+import type { Db } from "@ardonex/db";
 import {
   createIssueTreeHoldSchema,
   previewIssueTreeControlSchema,
   releaseIssueTreeHoldSchema,
-} from "@pioneeros/shared";
+} from "@ardonex/shared";
 import { validate } from "../middleware/validate.js";
 import { heartbeatService, issueService, issueTreeControlService, logActivity } from "../services/index.js";
 import { assertBoard, assertCompanyAccess, getActorInfo } from "./authz.js";

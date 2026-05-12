@@ -2,11 +2,11 @@ import type {
   WorkspaceCommandDefinition,
   WorkspaceRuntimeControlTarget,
   WorkspaceRuntimeService,
-} from "@pioneeros/shared";
+} from "@ardonex/shared";
 import {
   listWorkspaceCommandDefinitions,
   matchWorkspaceRuntimeServiceToCommand,
-} from "@pioneeros/shared";
+} from "@ardonex/shared";
 import { Activity, ExternalLink, Loader2, Play, RotateCcw, Square } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";

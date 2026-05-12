@@ -27,7 +27,7 @@ import { PageTabBar } from "../components/PageTabBar";
 import { adapterLabels, roleLabels, help } from "../components/agent-config-primitives";
 import { ToggleSwitch } from "@/components/ui/toggle-switch";
 import { useAdapterCapabilities } from "@/adapters/use-adapter-capabilities";
-import { redactCommandText as redactCommandSecretText } from "@pioneeros/adapter-utils";
+import { redactCommandText as redactCommandSecretText } from "@ardonex/adapter-utils";
 import { MarkdownEditor } from "../components/MarkdownEditor";
 import { assetsApi } from "../api/assets";
 import { getUIAdapter, buildTranscript, onAdapterChange } from "../adapters";
@@ -92,8 +92,8 @@ import {
   type AgentRuntimeState,
   type LiveEvent,
   type WorkspaceOperation,
-} from "@pioneeros/shared";
-import { redactHomePathUserSegments, redactHomePathUserSegmentsInValue } from "@pioneeros/adapter-utils";
+} from "@ardonex/shared";
+import { redactHomePathUserSegments, redactHomePathUserSegmentsInValue } from "@ardonex/adapter-utils";
 import { agentRouteRef } from "../lib/utils";
 import {
   applyAgentSkillSnapshot,

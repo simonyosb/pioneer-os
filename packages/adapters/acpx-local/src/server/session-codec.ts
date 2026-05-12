@@ -1,4 +1,4 @@
-import type { AdapterSessionCodec } from "@pioneeros/adapter-utils";
+import type { AdapterSessionCodec } from "@ardonex/adapter-utils";
 
 function readString(value: unknown): string | null {
   return typeof value === "string" && value.trim().length > 0 ? value.trim() : null;

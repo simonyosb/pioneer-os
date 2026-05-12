@@ -1,4 +1,4 @@
-import type { DocumentRevision, IssueDocument } from "@pioneeros/shared";
+import type { DocumentRevision, IssueDocument } from "@ardonex/shared";
 
 type DocumentRevisionState = {
   currentRevision: DocumentRevision;

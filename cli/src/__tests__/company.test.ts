@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import type { CompanyPortabilityPreviewResult } from "@pioneeros/shared";
+import type { CompanyPortabilityPreviewResult } from "@ardonex/shared";
 import {
   buildCompanyDashboardUrl,
   buildDefaultImportAdapterOverrides,

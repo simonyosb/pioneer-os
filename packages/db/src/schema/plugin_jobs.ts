@@ -9,7 +9,7 @@ import {
   uniqueIndex,
 } from "drizzle-orm/pg-core";
 import { plugins } from "./plugins.js";
-import type { PluginJobStatus, PluginJobRunStatus, PluginJobRunTrigger } from "@pioneeros/shared";
+import type { PluginJobStatus, PluginJobRunStatus, PluginJobRunTrigger } from "@ardonex/shared";
 
 /**
  * `plugin_jobs` table — registration and runtime configuration for

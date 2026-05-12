@@ -1,4 +1,4 @@
-import { definePlugin, runWorker } from "@pioneeros/plugin-sdk";
+import { definePlugin, runWorker } from "@ardonex/plugin-sdk";
 
 const PLUGIN_NAME = "hello-world-example";
 const HEALTH_MESSAGE = "Hello World example plugin ready";

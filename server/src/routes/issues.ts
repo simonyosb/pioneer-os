@@ -3,8 +3,8 @@ import { Router, type Request, type Response } from "express";
 import multer from "multer";
 import { z } from "zod";
 import { and, desc, eq, inArray } from "drizzle-orm";
-import type { Db } from "@pioneeros/db";
-import { activityLog, executionWorkspaces, issueExecutionDecisions, projectWorkspaces } from "@pioneeros/db";
+import type { Db } from "@ardonex/db";
+import { activityLog, executionWorkspaces, issueExecutionDecisions, projectWorkspaces } from "@ardonex/db";
 import {
   addIssueCommentSchema,
   acceptIssueThreadInteractionSchema,
@@ -38,8 +38,8 @@ import {
   type CompanySearchResponse,
   type ExecutionWorkspace,
   type SuccessfulRunHandoffState,
-} from "@pioneeros/shared";
-import { trackAgentTaskCompleted } from "@pioneeros/shared/telemetry";
+} from "@ardonex/shared";
+import { trackAgentTaskCompleted } from "@ardonex/shared/telemetry";
 import { getTelemetryClient } from "../telemetry.js";
 import type { StorageService } from "../storage/types.js";
 import { validate } from "../middleware/validate.js";

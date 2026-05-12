@@ -1,4 +1,4 @@
-import type { IssueRelationIssueSummary } from "@pioneeros/shared";
+import type { IssueRelationIssueSummary } from "@ardonex/shared";
 
 export function isAssignedBacklogBlocker(blocker: IssueRelationIssueSummary): boolean {
   return blocker.status === "backlog" && Boolean(blocker.assigneeAgentId);

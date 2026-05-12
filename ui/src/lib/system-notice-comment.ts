@@ -2,7 +2,7 @@ import type {
   IssueCommentMetadata,
   IssueCommentMetadataRow,
   IssueCommentPresentation,
-} from "@pioneeros/shared";
+} from "@ardonex/shared";
 import type {
   SystemNoticeMetadataRow,
   SystemNoticeMetadataSection,

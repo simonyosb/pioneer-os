@@ -35,7 +35,7 @@ export function buildDocumentTitle(breadcrumbs: Breadcrumb[], companyName?: stri
     ? []
     : [...breadcrumbs].reverse().map((breadcrumb) => breadcrumb.label);
   const companyPart = companyName?.trim() ? [companyName.trim()] : [];
-  const parts = [...pageParts, ...companyPart, "Pioneer OS"];
+  const parts = [...pageParts, ...companyPart, "Ardonex"];
   return parts.join(" • ");
 }
 

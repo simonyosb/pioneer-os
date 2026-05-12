@@ -10,7 +10,7 @@ RUN apt-get update \
 # Modify the existing node user/group to have the specified UID/GID to match host user
 RUN usermod -u $USER_UID --non-unique node \
   && groupmod -g $USER_GID --non-unique node \
-  && usermod -g $USER_GID -d /paperclip node
+  && usermod -g $USER_GID -d /ardonex node
 
 FROM base AS deps
 WORKDIR /app
@@ -43,9 +43,9 @@ FROM base AS build
 WORKDIR /app
 COPY --from=deps /app /app
 COPY . .
-RUN pnpm --filter @pioneeros/ui build
-RUN pnpm --filter @pioneeros/plugin-sdk build
-RUN pnpm --filter @pioneeros/server build
+RUN pnpm --filter @ardonex/ui build
+RUN pnpm --filter @ardonex/plugin-sdk build
+RUN pnpm --filter @ardonex/server build
 RUN test -f server/dist/index.js || (echo "ERROR: server build output missing" && exit 1)
 
 FROM base AS production
@@ -57,27 +57,32 @@ RUN npm install --global --omit=dev @anthropic-ai/claude-code@latest @openai/cod
   && apt-get update \
   && apt-get install -y --no-install-recommends openssh-client jq \
   && rm -rf /var/lib/apt/lists/* \
-  && mkdir -p /paperclip \
-  && chown node:node /paperclip
+  && mkdir -p /ardonex \
+  && chown node:node /ardonex
 
 COPY scripts/docker-entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
 ENV NODE_ENV=production \
-  HOME=/paperclip \
+  HOME=/ardonex \
   HOST=0.0.0.0 \
   PORT=3100 \
   SERVE_UI=true \
-  PAPERCLIP_HOME=/paperclip \
+  ARDONEX_HOME=/ardonex \
+  ARDONEX_INSTANCE_ID=default \
+  ARDONEX_CONFIG=/ardonex/instances/default/config.json \
+  ARDONEX_DEPLOYMENT_MODE=authenticated \
+  ARDONEX_DEPLOYMENT_EXPOSURE=private \
+  PAPERCLIP_HOME=/ardonex \
   PAPERCLIP_INSTANCE_ID=default \
-  USER_UID=${USER_UID} \
-  USER_GID=${USER_GID} \
-  PAPERCLIP_CONFIG=/paperclip/instances/default/config.json \
+  PAPERCLIP_CONFIG=/ardonex/instances/default/config.json \
   PAPERCLIP_DEPLOYMENT_MODE=authenticated \
   PAPERCLIP_DEPLOYMENT_EXPOSURE=private \
+  USER_UID=${USER_UID} \
+  USER_GID=${USER_GID} \
   OPENCODE_ALLOW_ALL_MODELS=true
 
-VOLUME ["/paperclip"]
+VOLUME ["/ardonex"]
 EXPOSE 3100
 
 ENTRYPOINT ["docker-entrypoint.sh"]

@@ -1,4 +1,4 @@
-import type { CompanyPortabilityFileEntry } from "@pioneeros/shared";
+import type { CompanyPortabilityFileEntry } from "@ardonex/shared";
 
 const contentTypeByExtension: Record<string, string> = {
   ".gif": "image/gif",

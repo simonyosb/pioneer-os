@@ -2,8 +2,8 @@ import path from "node:path";
 import {
   runAdapterExecutionTargetShellCommand,
   type AdapterExecutionTarget,
-} from "@pioneeros/adapter-utils/execution-target";
-import { ensurePathInEnv } from "@pioneeros/adapter-utils/server-utils";
+} from "@ardonex/adapter-utils/execution-target";
+import { ensurePathInEnv } from "@ardonex/adapter-utils/server-utils";
 
 const DEFAULT_CURSOR_COMMAND_BASENAMES = new Set(["agent", "cursor-agent"]);
 // `.local/bin` first because the official Cursor Agent installer drops the

@@ -1,5 +1,5 @@
 import { Router, type Request } from "express";
-import type { Db } from "@pioneeros/db";
+import type { Db } from "@ardonex/db";
 import {
   DEFAULT_FEEDBACK_DATA_SHARING_TERMS_VERSION,
   companyPortabilityExportSchema,
@@ -11,7 +11,7 @@ import {
   feedbackVoteValueSchema,
   updateCompanyBrandingSchema,
   updateCompanySchema,
-} from "@pioneeros/shared";
+} from "@ardonex/shared";
 import { badRequest, forbidden } from "../errors.js";
 import { validate } from "../middleware/validate.js";
 import {

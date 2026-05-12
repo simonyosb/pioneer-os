@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import type { AdapterConfigSchema, ConfigFieldSchema } from "@pioneeros/adapter-utils";
+import type { AdapterConfigSchema, ConfigFieldSchema } from "@ardonex/adapter-utils";
 import { fieldMatchesVisibleWhen } from "./schema-config-fields";
 
 const sourceField: ConfigFieldSchema = {

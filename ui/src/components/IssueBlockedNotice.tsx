@@ -1,4 +1,4 @@
-import type { IssueBlockerAttention, IssueRelationIssueSummary, SuccessfulRunHandoffState } from "@pioneeros/shared";
+import type { IssueBlockerAttention, IssueRelationIssueSummary, SuccessfulRunHandoffState } from "@ardonex/shared";
 import { AlertTriangle, Flag } from "lucide-react";
 import { Link } from "@/lib/router";
 import { createIssueDetailPath } from "../lib/issueDetailBreadcrumb";

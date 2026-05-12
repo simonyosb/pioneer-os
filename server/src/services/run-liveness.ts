@@ -1,4 +1,4 @@
-import type { HeartbeatRunStatus, IssueStatus, RunLivenessState } from "@pioneeros/shared";
+import type { HeartbeatRunStatus, IssueStatus, RunLivenessState } from "@ardonex/shared";
 
 export type RunLivenessActionability =
   | "runnable"

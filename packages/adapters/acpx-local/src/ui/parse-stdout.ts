@@ -1,4 +1,4 @@
-import type { TranscriptEntry } from "@pioneeros/adapter-utils";
+import type { TranscriptEntry } from "@ardonex/adapter-utils";
 
 function parseJson(line: string): Record<string, unknown> | null {
   try {

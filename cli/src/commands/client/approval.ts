@@ -6,7 +6,7 @@ import {
   resubmitApprovalSchema,
   type Approval,
   type ApprovalComment,
-} from "@pioneeros/shared";
+} from "@ardonex/shared";
 import {
   addCommonClientOptions,
   formatInlineRecord,

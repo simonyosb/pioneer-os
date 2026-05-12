@@ -421,14 +421,14 @@ async function runPnpm(args: string[], options: {
 
 async function getMigrationStatusPayload() {
   const status = await runPnpm(
-    ["--filter", "@pioneeros/db", "exec", "tsx", "src/migration-status.ts", "--json"],
+    ["--filter", "@ardonex/db", "exec", "tsx", "src/migration-status.ts", "--json"],
     { env },
   );
   if (status.code !== 0) {
     process.stderr.write(
       status.stderr ||
         status.stdout ||
-        `[paperclip] Command failed with code ${status.code}: pnpm --filter @pioneeros/db exec tsx src/migration-status.ts --json\n`,
+        `[paperclip] Command failed with code ${status.code}: pnpm --filter @ardonex/db exec tsx src/migration-status.ts --json\n`,
     );
     process.exit(status.code);
   }
@@ -516,7 +516,7 @@ async function maybePreflightMigrations(options: { interactive?: boolean; autoAp
 async function buildPluginSdk() {
   console.log("[paperclip] building plugin sdk...");
   const result = await runPnpm(
-    ["--filter", "@pioneeros/plugin-sdk", "build"],
+    ["--filter", "@ardonex/plugin-sdk", "build"],
     { stdio: "inherit" },
   );
   if (result.signal) {
@@ -596,7 +596,7 @@ async function startServerChild() {
   const serverScript = mode === "watch" ? "dev:watch" : "dev";
   child = spawn(
     pnpmBin,
-    ["--filter", "@pioneeros/server", serverScript, ...forwardedArgs],
+    ["--filter", "@ardonex/server", serverScript, ...forwardedArgs],
     { stdio: "inherit", env, shell: process.platform === "win32" },
   );
 

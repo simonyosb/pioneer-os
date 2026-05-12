@@ -4,8 +4,8 @@ import {
   trackAgentFirstHeartbeat,
   trackAgentTaskCompleted,
   trackInstallCompleted,
-} from "@pioneeros/shared/telemetry";
-import type { TelemetryClient } from "@pioneeros/shared/telemetry";
+} from "@ardonex/shared/telemetry";
+import type { TelemetryClient } from "@ardonex/shared/telemetry";
 
 function createClient(): TelemetryClient {
   return {

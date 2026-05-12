@@ -17,7 +17,7 @@ const mockTrackAgentTaskCompleted = vi.hoisted(() => vi.fn());
 const mockGetTelemetryClient = vi.hoisted(() => vi.fn());
 
 function registerModuleMocks() {
-  vi.doMock("@pioneeros/shared/telemetry", () => ({
+  vi.doMock("@ardonex/shared/telemetry", () => ({
     trackAgentTaskCompleted: mockTrackAgentTaskCompleted,
     trackErrorHandlerCrash: vi.fn(),
   }));
@@ -100,7 +100,7 @@ async function createApp(actor: Record<string, unknown>) {
 describe("issue telemetry routes", () => {
   beforeEach(() => {
     vi.resetModules();
-    vi.doUnmock("@pioneeros/shared/telemetry");
+    vi.doUnmock("@ardonex/shared/telemetry");
     vi.doUnmock("../telemetry.js");
     vi.doUnmock("../services/index.js");
     vi.doUnmock("../routes/issues.js");

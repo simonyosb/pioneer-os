@@ -12,8 +12,8 @@ import {
   pluginDatabaseNamespaces,
   pluginMigrations,
   plugins,
-} from "@pioneeros/db";
-import type { PaperclipPluginManifestV1 } from "@pioneeros/shared";
+} from "@ardonex/db";
+import type { PaperclipPluginManifestV1 } from "@ardonex/shared";
 import {
   getEmbeddedPostgresTestSupport,
   startEmbeddedPostgresTestDatabase,

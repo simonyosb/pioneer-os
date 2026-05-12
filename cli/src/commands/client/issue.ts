@@ -8,7 +8,7 @@ import {
   updateIssueSchema,
   type Issue,
   type IssueComment,
-} from "@pioneeros/shared";
+} from "@ardonex/shared";
 import {
   addCommonClientOptions,
   formatInlineRecord,

@@ -1,7 +1,7 @@
 import { and, eq, inArray } from "drizzle-orm";
-import type { Db } from "@pioneeros/db";
-import { agentWakeupRequests, agents, heartbeatRuns, issues } from "@pioneeros/db";
-import type { IssueCommentMetadata, IssueCommentPresentation, RunLivenessState } from "@pioneeros/shared";
+import type { Db } from "@ardonex/db";
+import { agentWakeupRequests, agents, heartbeatRuns, issues } from "@ardonex/db";
+import type { IssueCommentMetadata, IssueCommentPresentation, RunLivenessState } from "@ardonex/shared";
 import { withRecoveryModelProfileHint } from "./model-profile-hint.js";
 
 export const FINISH_SUCCESSFUL_RUN_HANDOFF_REASON = "finish_successful_run_handoff";

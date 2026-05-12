@@ -1,4 +1,4 @@
-import type { CompanySearchHighlight } from "@pioneeros/shared";
+import type { CompanySearchHighlight } from "@ardonex/shared";
 import { cn } from "@/lib/utils";
 
 export interface HighlightedTextProps {

@@ -1,12 +1,12 @@
 import { Router, type Request } from "express";
-import type { Db } from "@pioneeros/db";
+import type { Db } from "@ardonex/db";
 import {
   companySkillCreateSchema,
   companySkillFileUpdateSchema,
   companySkillImportSchema,
   companySkillProjectScanRequestSchema,
-} from "@pioneeros/shared";
-import { trackSkillImported } from "@pioneeros/shared/telemetry";
+} from "@ardonex/shared";
+import { trackSkillImported } from "@ardonex/shared/telemetry";
 import { validate } from "../middleware/validate.js";
 import { accessService, agentService, companySkillService, logActivity } from "../services/index.js";
 import { forbidden } from "../errors.js";

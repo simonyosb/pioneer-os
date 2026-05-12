@@ -1,4 +1,4 @@
-import { usePluginAction, usePluginData, type PluginWidgetProps } from "@pioneeros/plugin-sdk/ui";
+import { usePluginAction, usePluginData, type PluginWidgetProps } from "@ardonex/plugin-sdk/ui";
 
 type HealthData = {
   status: "ok" | "degraded" | "error";

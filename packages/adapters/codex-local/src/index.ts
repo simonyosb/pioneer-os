@@ -1,4 +1,4 @@
-import type { AdapterModelProfileDefinition } from "@pioneeros/adapter-utils";
+import type { AdapterModelProfileDefinition } from "@ardonex/adapter-utils";
 
 export const type = "codex_local";
 export const label = "Codex (local)";

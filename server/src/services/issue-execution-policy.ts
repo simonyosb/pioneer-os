@@ -9,8 +9,8 @@ import type {
   IssueExecutionStagePrincipal,
   IssueExecutionState,
   IssueMonitorScheduledBy,
-} from "@pioneeros/shared";
-import { issueExecutionPolicySchema, issueExecutionStateSchema } from "@pioneeros/shared";
+} from "@ardonex/shared";
+import { issueExecutionPolicySchema, issueExecutionStateSchema } from "@ardonex/shared";
 import { unprocessable } from "../errors.js";
 
 type AssigneeLike = {

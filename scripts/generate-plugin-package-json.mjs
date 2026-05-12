@@ -19,7 +19,7 @@ const sdkPackageJson = JSON.parse(readFileSync(sdkPackageJsonPath, "utf8"));
 const publishConfig = packageJson.publishConfig ?? {};
 const dependencies = {
   ...(packageJson.dependencies ?? {}),
-  "@pioneeros/plugin-sdk": sdkPackageJson.version,
+  "@ardonex/plugin-sdk": sdkPackageJson.version,
 };
 
 const publishPackageJson = {

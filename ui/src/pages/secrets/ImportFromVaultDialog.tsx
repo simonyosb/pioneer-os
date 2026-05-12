@@ -22,7 +22,7 @@ import type {
   RemoteSecretImportPreviewResult,
   RemoteSecretImportResult,
   RemoteSecretImportRowResult,
-} from "@pioneeros/shared";
+} from "@ardonex/shared";
 import { ApiError } from "../../api/client";
 import {
   secretsApi,

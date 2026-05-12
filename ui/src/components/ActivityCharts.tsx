@@ -1,4 +1,4 @@
-import type { DashboardRunActivityDay, HeartbeatRun } from "@pioneeros/shared";
+import type { DashboardRunActivityDay, HeartbeatRun } from "@ardonex/shared";
 
 /* ---- Utilities ---- */
 

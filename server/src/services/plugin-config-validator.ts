@@ -10,7 +10,7 @@
 
 import Ajv, { type ErrorObject } from "ajv";
 import addFormats from "ajv-formats";
-import type { JsonSchema } from "@pioneeros/shared";
+import type { JsonSchema } from "@ardonex/shared";
 
 export interface ConfigValidationResult {
   valid: boolean;

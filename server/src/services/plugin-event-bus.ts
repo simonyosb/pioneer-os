@@ -20,8 +20,8 @@
  * @see PLUGIN_SPEC.md §16.2 — Plugin-to-Plugin Events
  */
 
-import type { PluginEventType } from "@pioneeros/shared";
-import type { PluginEvent, EventFilter } from "@pioneeros/plugin-sdk";
+import type { PluginEventType } from "@ardonex/shared";
+import type { PluginEvent, EventFilter } from "@ardonex/plugin-sdk";
 
 // ---------------------------------------------------------------------------
 // Internal types

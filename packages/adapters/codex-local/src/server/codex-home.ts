@@ -1,8 +1,8 @@
 import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
-import type { AdapterExecutionContext } from "@pioneeros/adapter-utils";
-import { resolvePaperclipInstanceRootForAdapter } from "@pioneeros/adapter-utils/server-utils";
+import type { AdapterExecutionContext } from "@ardonex/adapter-utils";
+import { resolvePaperclipInstanceRootForAdapter } from "@ardonex/adapter-utils/server-utils";
 
 const TRUTHY_ENV_RE = /^(1|true|yes|on)$/i;
 const COPIED_SHARED_FILES = ["config.json", "config.toml", "instructions.md"] as const;

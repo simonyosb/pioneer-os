@@ -32,4 +32,4 @@ export type {
   AdapterConfigSchema,
   AdapterRuntimeCommandSpec,
   ServerAdapterModule,
-} from "@pioneeros/adapter-utils";
+} from "@ardonex/adapter-utils";

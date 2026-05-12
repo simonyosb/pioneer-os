@@ -1,6 +1,6 @@
-import type { Environment, EnvironmentProbeResult } from "@pioneeros/shared";
-import type { Db } from "@pioneeros/db";
-import { ensureSshWorkspaceReady } from "@pioneeros/adapter-utils/ssh";
+import type { Environment, EnvironmentProbeResult } from "@ardonex/shared";
+import type { Db } from "@ardonex/db";
+import { ensureSshWorkspaceReady } from "@ardonex/adapter-utils/ssh";
 import {
   resolveEnvironmentDriverConfigForRuntime,
   type ParsedEnvironmentConfig,

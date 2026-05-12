@@ -1,4 +1,4 @@
-import type { Issue, IssueStatus } from "@pioneeros/shared";
+import type { Issue, IssueStatus } from "@ardonex/shared";
 import { workflowSort } from "./workflow-sort";
 
 export type SubIssueProgressTargetKind = "next" | "blocked";

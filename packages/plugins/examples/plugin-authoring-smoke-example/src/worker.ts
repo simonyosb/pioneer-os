@@ -1,4 +1,4 @@
-import { definePlugin, runWorker } from "@pioneeros/plugin-sdk";
+import { definePlugin, runWorker } from "@ardonex/plugin-sdk";
 
 const plugin = definePlugin({
   async setup(ctx) {

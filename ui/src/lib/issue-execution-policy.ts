@@ -1,4 +1,4 @@
-import type { IssueExecutionPolicy, IssueExecutionStageParticipant, IssueExecutionStagePrincipal } from "@pioneeros/shared";
+import type { IssueExecutionPolicy, IssueExecutionStageParticipant, IssueExecutionStagePrincipal } from "@ardonex/shared";
 import { parseAssigneeValue } from "./assignees";
 
 type StageType = "review" | "approval";

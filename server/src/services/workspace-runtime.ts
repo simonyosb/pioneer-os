@@ -5,14 +5,14 @@ import net from "node:net";
 import { createHash, randomUUID } from "node:crypto";
 import path from "node:path";
 import { setTimeout as delay } from "node:timers/promises";
-import type { AdapterRuntimeServiceReport } from "@pioneeros/adapter-utils";
-import type { Db } from "@pioneeros/db";
-import { executionWorkspaces, projectWorkspaces, workspaceRuntimeServices } from "@pioneeros/db";
+import type { AdapterRuntimeServiceReport } from "@ardonex/adapter-utils";
+import type { Db } from "@ardonex/db";
+import { executionWorkspaces, projectWorkspaces, workspaceRuntimeServices } from "@ardonex/db";
 import {
   listWorkspaceServiceCommandDefinitions,
   type WorkspaceRuntimeDesiredState,
   type WorkspaceRuntimeServiceStateMap,
-} from "@pioneeros/shared";
+} from "@ardonex/shared";
 import { and, desc, eq, inArray } from "drizzle-orm";
 import { asNumber, asString, parseObject, renderTemplate } from "../adapters/utils.js";
 import { resolveHomeAwarePath } from "../home-paths.js";
@@ -695,25 +695,34 @@ function buildWorkspaceCommandEnv(input: {
   created: boolean;
 }) {
   const env: NodeJS.ProcessEnv = { ...process.env };
-  env.PAPERCLIP_WORKSPACE_CWD = input.worktreePath;
-  env.PAPERCLIP_WORKSPACE_PATH = input.worktreePath;
-  env.PAPERCLIP_WORKSPACE_WORKTREE_PATH = input.worktreePath;
-  env.PAPERCLIP_WORKSPACE_BRANCH = input.branchName;
-  env.PAPERCLIP_WORKSPACE_BASE_CWD = input.base.baseCwd;
-  env.PAPERCLIP_WORKSPACE_REPO_ROOT = input.repoRoot;
-  env.PAPERCLIP_WORKSPACE_SOURCE = input.base.source;
-  env.PAPERCLIP_WORKSPACE_REPO_REF = input.base.repoRef ?? "";
-  env.PAPERCLIP_WORKSPACE_REPO_URL = input.base.repoUrl ?? "";
-  env.PAPERCLIP_WORKSPACE_CREATED = input.created ? "true" : "false";
-  env.PAPERCLIP_PROJECT_ID = input.base.projectId ?? "";
-  env.PAPERCLIP_PROJECT_WORKSPACE_ID = input.base.workspaceId ?? "";
-  env.PAPERCLIP_AGENT_ID = input.agent.id ?? "";
-  env.PAPERCLIP_AGENT_NAME = input.agent.name;
-  env.PAPERCLIP_COMPANY_ID = input.agent.companyId;
-  env.PAPERCLIP_ISSUE_ID = input.issue?.id ?? "";
-  env.PAPERCLIP_ISSUE_IDENTIFIER = input.issue?.identifier ?? "";
-  env.PAPERCLIP_ISSUE_TITLE = input.issue?.title ?? "";
-  env.PAPERCLIP_ISSUE_WORK_MODE = input.issue?.workMode ?? "";
+  const paperclipVars: Record<string, string> = {
+    PAPERCLIP_WORKSPACE_CWD: input.worktreePath,
+    PAPERCLIP_WORKSPACE_PATH: input.worktreePath,
+    PAPERCLIP_WORKSPACE_WORKTREE_PATH: input.worktreePath,
+    PAPERCLIP_WORKSPACE_BRANCH: input.branchName,
+    PAPERCLIP_WORKSPACE_BASE_CWD: input.base.baseCwd,
+    PAPERCLIP_WORKSPACE_REPO_ROOT: input.repoRoot,
+    PAPERCLIP_WORKSPACE_SOURCE: input.base.source,
+    PAPERCLIP_WORKSPACE_REPO_REF: input.base.repoRef ?? "",
+    PAPERCLIP_WORKSPACE_REPO_URL: input.base.repoUrl ?? "",
+    PAPERCLIP_WORKSPACE_CREATED: input.created ? "true" : "false",
+    PAPERCLIP_PROJECT_ID: input.base.projectId ?? "",
+    PAPERCLIP_PROJECT_WORKSPACE_ID: input.base.workspaceId ?? "",
+    PAPERCLIP_AGENT_ID: input.agent.id ?? "",
+    PAPERCLIP_AGENT_NAME: input.agent.name,
+    PAPERCLIP_COMPANY_ID: input.agent.companyId,
+    PAPERCLIP_ISSUE_ID: input.issue?.id ?? "",
+    PAPERCLIP_ISSUE_IDENTIFIER: input.issue?.identifier ?? "",
+    PAPERCLIP_ISSUE_TITLE: input.issue?.title ?? "",
+    PAPERCLIP_ISSUE_WORK_MODE: input.issue?.workMode ?? "",
+  };
+  // Also inject ARDONEX_* aliases for all PAPERCLIP_* vars so scripts can use either prefix.
+  for (const [key, val] of Object.entries(paperclipVars)) {
+    env[key] = val;
+    if (key.startsWith("PAPERCLIP_")) {
+      env["ARDONEX_" + key.slice("PAPERCLIP_".length)] = val;
+    }
+  }
   return env;
 }
 

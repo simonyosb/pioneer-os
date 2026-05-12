@@ -1,8 +1,8 @@
 import { Router, type Request, type Response } from "express";
 import { generateKeyPairSync, randomUUID } from "node:crypto";
 import path from "node:path";
-import type { Db } from "@pioneeros/db";
-import { agents as agentsTable, companies, heartbeatRuns, issues as issuesTable } from "@pioneeros/db";
+import type { Db } from "@ardonex/db";
+import { agents as agentsTable, companies, heartbeatRuns, issues as issuesTable } from "@ardonex/db";
 import { and, desc, eq, inArray, not, sql } from "drizzle-orm";
 import {
   agentSkillSyncSchema,
@@ -25,12 +25,12 @@ import {
   wakeAgentSchema,
   updateAgentSchema,
   supportedEnvironmentDriversForAdapter,
-} from "@pioneeros/shared";
+} from "@ardonex/shared";
 import {
   readPaperclipSkillSyncPreference,
   writePaperclipSkillSyncPreference,
-} from "@pioneeros/adapter-utils/server-utils";
-import { trackAgentCreated } from "@pioneeros/shared/telemetry";
+} from "@ardonex/adapter-utils/server-utils";
+import { trackAgentCreated } from "@ardonex/shared/telemetry";
 import { validate } from "../middleware/validate.js";
 import {
   agentService,
@@ -57,11 +57,11 @@ import type { PluginWorkerManager } from "../services/plugin-worker-manager.js";
 import { environmentService } from "../services/environments.js";
 import { resolveEnvironmentExecutionTarget } from "../services/environment-execution-target.js";
 import { environmentRuntimeService } from "../services/environment-runtime.js";
-import type { AdapterExecutionTarget } from "@pioneeros/adapter-utils/execution-target";
+import type { AdapterExecutionTarget } from "@ardonex/adapter-utils/execution-target";
 import type {
   AdapterEnvironmentCheck,
   AdapterEnvironmentTestResult,
-} from "@pioneeros/adapter-utils";
+} from "@ardonex/adapter-utils";
 import { secretService } from "../services/secrets.js";
 import {
   detectAdapterModel,
@@ -76,21 +76,21 @@ import { redactEventPayload } from "../redaction.js";
 import { redactCurrentUserValue } from "../log-redaction.js";
 import { renderOrgChartSvg, renderOrgChartPng, type OrgNode, type OrgChartStyle, ORG_CHART_STYLES } from "./org-chart-svg.js";
 import { instanceSettingsService } from "../services/instance-settings.js";
-import { runClaudeLogin } from "@pioneeros/adapter-claude-local/server";
+import { runClaudeLogin } from "@ardonex/adapter-claude-local/server";
 import {
   DEFAULT_ACPX_LOCAL_AGENT,
   DEFAULT_ACPX_LOCAL_MODE,
   DEFAULT_ACPX_LOCAL_NON_INTERACTIVE_PERMISSIONS,
   DEFAULT_ACPX_LOCAL_PERMISSION_MODE,
-} from "@pioneeros/adapter-acpx-local";
+} from "@ardonex/adapter-acpx-local";
 import {
   DEFAULT_CODEX_LOCAL_BYPASS_APPROVALS_AND_SANDBOX,
   DEFAULT_CODEX_LOCAL_MODEL,
-} from "@pioneeros/adapter-codex-local";
-import { DEFAULT_CURSOR_LOCAL_MODEL } from "@pioneeros/adapter-cursor-local";
-import { DEFAULT_GEMINI_LOCAL_MODEL } from "@pioneeros/adapter-gemini-local";
-import { DEFAULT_OPENCODE_LOCAL_MODEL } from "@pioneeros/adapter-opencode-local";
-import { requireOpenCodeModelId } from "@pioneeros/adapter-opencode-local/server";
+} from "@ardonex/adapter-codex-local";
+import { DEFAULT_CURSOR_LOCAL_MODEL } from "@ardonex/adapter-cursor-local";
+import { DEFAULT_GEMINI_LOCAL_MODEL } from "@ardonex/adapter-gemini-local";
+import { DEFAULT_OPENCODE_LOCAL_MODEL } from "@ardonex/adapter-opencode-local";
+import { requireOpenCodeModelId } from "@ardonex/adapter-opencode-local/server";
 import {
   loadDefaultAgentInstructionsBundle,
   resolveDefaultAgentInstructionsBundleRole,

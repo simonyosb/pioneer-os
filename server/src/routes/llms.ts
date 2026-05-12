@@ -1,6 +1,6 @@
 import { Router, type Request } from "express";
-import type { Db } from "@pioneeros/db";
-import { AGENT_ICON_NAMES } from "@pioneeros/shared";
+import type { Db } from "@ardonex/db";
+import { AGENT_ICON_NAMES } from "@ardonex/shared";
 import { forbidden } from "../errors.js";
 import { listServerAdapters } from "../adapters/index.js";
 import { agentService } from "../services/agents.js";

@@ -1,4 +1,4 @@
-import { inferBindModeFromHost } from "@pioneeros/shared";
+import { inferBindModeFromHost } from "@ardonex/shared";
 import type { PaperclipConfig } from "../config/schema.js";
 import type { CheckResult } from "./index.js";
 

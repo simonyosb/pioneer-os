@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
-import type { PaperclipPluginManifestV1 } from "@pioneeros/shared";
-import { createTestHarness } from "@pioneeros/plugin-sdk/testing";
+import type { PaperclipPluginManifestV1 } from "@ardonex/shared";
+import { createTestHarness } from "@ardonex/plugin-sdk/testing";
 
 describe("plugin SDK test harness", () => {
   it("requires skills.managed capability before resetting a missing declaration", async () => {

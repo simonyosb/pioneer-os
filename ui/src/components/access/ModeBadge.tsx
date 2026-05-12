@@ -1,4 +1,4 @@
-import type { DeploymentExposure, DeploymentMode } from "@pioneeros/shared";
+import type { DeploymentExposure, DeploymentMode } from "@ardonex/shared";
 import { Badge } from "@/components/ui/badge";
 
 export function ModeBadge({

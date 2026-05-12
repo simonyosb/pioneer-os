@@ -3,7 +3,7 @@
 import { act } from "react";
 import { createRoot } from "react-dom/client";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { buildProjectMentionHref, buildSkillMentionHref } from "@pioneeros/shared";
+import { buildProjectMentionHref, buildSkillMentionHref } from "@ardonex/shared";
 import {
   computeMentionMenuPosition,
   findClosestAutocompleteAnchor,

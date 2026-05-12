@@ -1,5 +1,5 @@
 import fs from "node:fs";
-import { paperclipConfigSchema, type PaperclipConfig } from "@pioneeros/shared";
+import { paperclipConfigSchema, type PaperclipConfig } from "@ardonex/shared";
 import { resolvePaperclipConfigPath } from "./paths.js";
 
 export function readConfigFile(): PaperclipConfig | null {

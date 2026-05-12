@@ -7,8 +7,8 @@ import {
   documents,
   issueDocuments,
   issues,
-} from "@pioneeros/db";
-import { ISSUE_CONTINUATION_SUMMARY_DOCUMENT_KEY } from "@pioneeros/shared";
+} from "@ardonex/db";
+import { ISSUE_CONTINUATION_SUMMARY_DOCUMENT_KEY } from "@ardonex/shared";
 import {
   getEmbeddedPostgresTestSupport,
   startEmbeddedPostgresTestDatabase,

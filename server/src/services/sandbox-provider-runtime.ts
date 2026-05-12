@@ -5,7 +5,7 @@ import type {
   FakeSandboxEnvironmentConfig,
   SandboxEnvironmentConfig,
   SandboxEnvironmentProvider,
-} from "@pioneeros/shared";
+} from "@ardonex/shared";
 
 export interface SandboxProviderValidationResult {
   ok: boolean;

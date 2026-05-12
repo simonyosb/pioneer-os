@@ -13,7 +13,7 @@ import {
   plugins,
   projects,
   projectWorkspaces,
-} from "@pioneeros/db";
+} from "@ardonex/db";
 import {
   getEmbeddedPostgresTestSupport,
   startEmbeddedPostgresTestDatabase,

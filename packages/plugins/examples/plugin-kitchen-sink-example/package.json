@@ -1,5 +1,5 @@
 {
-  "name": "@pioneeros/plugin-kitchen-sink-example",
+  "name": "@ardonex/plugin-kitchen-sink-example",
   "version": "0.1.0",
   "description": "Reference plugin that demonstrates the full Paperclip plugin surface area in one package",
   "type": "module",
@@ -13,14 +13,14 @@
     "ui": "./dist/ui/"
   },
   "scripts": {
-    "prebuild": "pnpm --filter @pioneeros/plugin-sdk ensure-build-deps",
+    "prebuild": "pnpm --filter @ardonex/plugin-sdk ensure-build-deps",
     "build": "tsc && node ./scripts/build-ui.mjs",
     "clean": "rm -rf dist",
-    "typecheck": "pnpm --filter @pioneeros/plugin-sdk ensure-build-deps && tsc --noEmit"
+    "typecheck": "pnpm --filter @ardonex/plugin-sdk ensure-build-deps && tsc --noEmit"
   },
   "dependencies": {
-    "@pioneeros/plugin-sdk": "workspace:*",
-    "@pioneeros/shared": "workspace:*"
+    "@ardonex/plugin-sdk": "workspace:*",
+    "@ardonex/shared": "workspace:*"
   },
   "devDependencies": {
     "esbuild": "^0.27.3",

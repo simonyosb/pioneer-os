@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import type { CompanySearchResult, CompanySearchResponse } from "@pioneeros/shared";
+import type { CompanySearchResult, CompanySearchResponse } from "@ardonex/shared";
 import { Badge } from "@/components/ui/badge";
 import { IssueGroupHeader } from "@/components/IssueGroupHeader";
 import { Input } from "@/components/ui/input";

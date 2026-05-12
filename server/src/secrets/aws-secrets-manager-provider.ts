@@ -1,6 +1,6 @@
 import { createHash, createHmac } from "node:crypto";
 import { S3Client } from "@aws-sdk/client-s3";
-import type { DeploymentMode } from "@pioneeros/shared";
+import type { DeploymentMode } from "@ardonex/shared";
 import { unprocessable } from "../errors.js";
 import type {
   PreparedSecretVersion,

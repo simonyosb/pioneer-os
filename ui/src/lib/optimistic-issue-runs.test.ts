@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import type { Issue } from "@pioneeros/shared";
+import type { Issue } from "@ardonex/shared";
 import type { RunForIssue } from "../api/activity";
 import type { ActiveRunForIssue, LiveRunForIssue } from "../api/heartbeats";
 import { clearIssueExecutionRun, removeLiveRunById, upsertInterruptedRun } from "./optimistic-issue-runs";

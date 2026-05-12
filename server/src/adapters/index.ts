@@ -26,5 +26,5 @@ export type {
   UsageSummary,
   AdapterAgent,
   AdapterRuntime,
-} from "@pioneeros/adapter-utils";
+} from "@ardonex/adapter-utils";
 export { runningProcesses } from "./utils.js";

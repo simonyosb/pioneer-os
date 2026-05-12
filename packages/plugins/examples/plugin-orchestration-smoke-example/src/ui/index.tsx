@@ -4,7 +4,7 @@ import {
   type PluginDetailTabProps,
   type PluginSettingsPageProps,
   type PluginWidgetProps,
-} from "@pioneeros/plugin-sdk/ui";
+} from "@ardonex/plugin-sdk/ui";
 import type React from "react";
 
 type SurfaceStatus = {

@@ -35,8 +35,8 @@
  */
 
 import { and, eq, lte, or } from "drizzle-orm";
-import type { Db } from "@pioneeros/db";
-import { pluginJobs, pluginJobRuns } from "@pioneeros/db";
+import type { Db } from "@ardonex/db";
+import { pluginJobs, pluginJobRuns } from "@ardonex/db";
 import type { PluginJobStore } from "./plugin-job-store.js";
 import type { PluginWorkerManager } from "./plugin-worker-manager.js";
 import { parseCron, nextCronTick, validateCron } from "./cron.js";

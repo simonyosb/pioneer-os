@@ -39,8 +39,8 @@ import type {
   Agent,
   Goal,
   PluginLocalFolderDeclaration,
-} from "@pioneeros/shared";
-export type { PluginLauncherRenderContextSnapshot } from "@pioneeros/shared";
+} from "@ardonex/shared";
+export type { PluginLauncherRenderContextSnapshot } from "@ardonex/shared";
 
 import type {
   PluginEvent,

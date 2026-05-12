@@ -6,7 +6,7 @@ import type {
   RoutineRevision,
   RoutineRevisionSnapshotTriggerV1,
   RoutineVariable,
-} from "@pioneeros/shared";
+} from "@ardonex/shared";
 import {
   routinesApi,
   type RestoreRoutineRevisionResponse,

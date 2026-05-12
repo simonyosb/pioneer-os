@@ -1,5 +1,5 @@
 import { Router } from "express";
-import type { Db } from "@pioneeros/db";
+import type { Db } from "@ardonex/db";
 import {
   createCostEventSchema,
   createFinanceEventSchema,
@@ -7,7 +7,7 @@ import {
   resolveBudgetIncidentSchema,
   updateBudgetSchema,
   upsertBudgetPolicySchema,
-} from "@pioneeros/shared";
+} from "@ardonex/shared";
 import { validate } from "../middleware/validate.js";
 import {
   budgetService,

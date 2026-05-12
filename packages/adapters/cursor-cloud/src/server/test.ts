@@ -3,8 +3,8 @@ import type {
   AdapterEnvironmentCheck,
   AdapterEnvironmentTestContext,
   AdapterEnvironmentTestResult,
-} from "@pioneeros/adapter-utils";
-import { asString, parseObject } from "@pioneeros/adapter-utils/server-utils";
+} from "@ardonex/adapter-utils";
+import { asString, parseObject } from "@ardonex/adapter-utils/server-utils";
 
 function summarizeStatus(checks: AdapterEnvironmentCheck[]): AdapterEnvironmentTestResult["status"] {
   if (checks.some((check) => check.level === "error")) return "fail";

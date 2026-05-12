@@ -1,4 +1,4 @@
-import type { Goal } from "@pioneeros/shared";
+import type { Goal } from "@ardonex/shared";
 import { Link } from "@/lib/router";
 import { StatusBadge } from "./StatusBadge";
 import { ChevronRight } from "lucide-react";

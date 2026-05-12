@@ -1,4 +1,4 @@
-import type { Issue } from "@pioneeros/shared";
+import type { Issue } from "@ardonex/shared";
 
 export type IssueFilterWorkspaceLookup = {
   mode?: string | null;

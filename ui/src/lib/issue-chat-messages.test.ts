@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import type { Agent } from "@pioneeros/shared";
+import type { Agent } from "@ardonex/shared";
 import {
   buildAssistantPartsFromTranscript,
   buildIssueChatMessages,

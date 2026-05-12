@@ -1,4 +1,4 @@
-import type { Agent } from "@pioneeros/shared";
+import type { Agent } from "@ardonex/shared";
 import { describe, expect, it } from "vitest";
 import { formatActivityVerb, formatIssueActivityAction } from "./activity-format";
 

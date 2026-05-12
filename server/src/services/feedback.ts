@@ -1,7 +1,7 @@
 import { readFile, readdir } from "node:fs/promises";
 import path from "node:path";
 import { and, asc, desc, eq, getTableColumns, gte, lte, ne, or } from "drizzle-orm";
-import type { Db } from "@pioneeros/db";
+import type { Db } from "@ardonex/db";
 import {
   agents,
   companies,
@@ -17,11 +17,11 @@ import {
   issueComments,
   issueDocuments,
   issues,
-} from "@pioneeros/db";
-import { readPaperclipSkillSyncPreference } from "@pioneeros/adapter-utils/server-utils";
-import { claudeConfigDir, parseClaudeStreamJson } from "@pioneeros/adapter-claude-local/server";
-import { codexHomeDir, parseCodexJsonl } from "@pioneeros/adapter-codex-local/server";
-import { parseOpenCodeJsonl } from "@pioneeros/adapter-opencode-local/server";
+} from "@ardonex/db";
+import { readPaperclipSkillSyncPreference } from "@ardonex/adapter-utils/server-utils";
+import { claudeConfigDir, parseClaudeStreamJson } from "@ardonex/adapter-claude-local/server";
+import { codexHomeDir, parseCodexJsonl } from "@ardonex/adapter-codex-local/server";
+import { parseOpenCodeJsonl } from "@ardonex/adapter-opencode-local/server";
 import {
   DEFAULT_FEEDBACK_DATA_SHARING_PREFERENCE,
   DEFAULT_FEEDBACK_DATA_SHARING_TERMS_VERSION,
@@ -34,7 +34,7 @@ import {
   type FeedbackTraceStatus,
   type FeedbackTraceTargetSummary,
   type FeedbackVoteValue,
-} from "@pioneeros/shared";
+} from "@ardonex/shared";
 import { resolveHomeAwarePath, resolvePaperclipInstanceRoot } from "../home-paths.js";
 import { notFound, unprocessable } from "../errors.js";
 import { agentInstructionsService } from "./agent-instructions.js";

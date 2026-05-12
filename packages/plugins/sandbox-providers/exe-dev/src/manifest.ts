@@ -1,4 +1,4 @@
-import type { PaperclipPluginManifestV1 } from "@pioneeros/plugin-sdk";
+import type { PaperclipPluginManifestV1 } from "@ardonex/plugin-sdk";
 
 const PLUGIN_ID = "paperclip.exe-dev-sandbox-provider";
 const PLUGIN_VERSION = "0.1.0";

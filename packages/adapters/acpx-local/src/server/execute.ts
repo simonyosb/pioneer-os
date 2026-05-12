@@ -3,10 +3,11 @@ import os from "node:os";
 import path from "node:path";
 import { createHash, randomUUID } from "node:crypto";
 import { fileURLToPath } from "node:url";
-import type { AdapterExecutionContext, AdapterExecutionResult } from "@pioneeros/adapter-utils";
-import { readAdapterExecutionTarget, adapterExecutionTargetSessionIdentity } from "@pioneeros/adapter-utils/execution-target";
+import type { AdapterExecutionContext, AdapterExecutionResult } from "@ardonex/adapter-utils";
+import { readAdapterExecutionTarget, adapterExecutionTargetSessionIdentity } from "@ardonex/adapter-utils/execution-target";
 import {
   DEFAULT_PAPERCLIP_AGENT_PROMPT_TEMPLATE,
+  addPioneerAliases,
   applyPaperclipWorkspaceEnv,
   asNumber,
   asString,
@@ -27,8 +28,8 @@ import {
   shapePaperclipWorkspaceEnvForExecution,
   stringifyPaperclipWakePayload,
   type PaperclipSkillEntry,
-} from "@pioneeros/adapter-utils/server-utils";
-import { shellQuote } from "@pioneeros/adapter-utils/ssh";
+} from "@ardonex/adapter-utils/server-utils";
+import { shellQuote } from "@ardonex/adapter-utils/ssh";
 import {
   createAcpRuntime,
   createAgentRegistry,
@@ -723,6 +724,7 @@ async function buildRuntime(input: {
     if (typeof value === "string") env[key] = value;
   }
   if (!hasExplicitApiKey && authToken) env.PAPERCLIP_API_KEY = authToken;
+  addPioneerAliases(env);
 
   let skillPromptInstructions = "";
   let skillsIdentity: Record<string, unknown> = { mode: "unsupported" };

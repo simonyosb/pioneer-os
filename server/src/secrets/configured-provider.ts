@@ -1,4 +1,4 @@
-import { SECRET_PROVIDERS, type SecretProvider } from "@pioneeros/shared";
+import { SECRET_PROVIDERS, type SecretProvider } from "@ardonex/shared";
 
 export function getConfiguredSecretProvider(): SecretProvider {
   const configuredProvider = process.env.PAPERCLIP_SECRETS_PROVIDER;

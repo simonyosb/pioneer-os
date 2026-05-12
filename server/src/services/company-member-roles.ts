@@ -1,5 +1,5 @@
-import { PERMISSION_KEYS } from "@pioneeros/shared";
-import type { HumanCompanyMembershipRole } from "@pioneeros/shared";
+import { PERMISSION_KEYS } from "@ardonex/shared";
+import type { HumanCompanyMembershipRole } from "@ardonex/shared";
 
 const HUMAN_COMPANY_MEMBERSHIP_ROLES: HumanCompanyMembershipRole[] = [
   "owner",

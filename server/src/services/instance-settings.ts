@@ -1,5 +1,5 @@
-import type { Db } from "@pioneeros/db";
-import { companies, instanceSettings } from "@pioneeros/db";
+import type { Db } from "@ardonex/db";
+import { companies, instanceSettings } from "@ardonex/db";
 import {
   DEFAULT_FEEDBACK_DATA_SHARING_PREFERENCE,
   DEFAULT_BACKUP_RETENTION,
@@ -11,7 +11,7 @@ import {
   type PatchInstanceGeneralSettings,
   type InstanceSettings,
   type PatchInstanceExperimentalSettings,
-} from "@pioneeros/shared";
+} from "@ardonex/shared";
 import { eq } from "drizzle-orm";
 
 const DEFAULT_SINGLETON_KEY = "default";

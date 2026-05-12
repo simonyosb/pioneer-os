@@ -13,7 +13,7 @@ import {
   companySecrets,
   createDb,
   secretAccessEvents,
-} from "@pioneeros/db";
+} from "@ardonex/db";
 import { getEmbeddedPostgresTestSupport, startEmbeddedPostgresTestDatabase } from "./helpers/embedded-postgres.js";
 import { awsSecretsManagerProvider } from "../secrets/aws-secrets-manager-provider.js";
 import { localEncryptedProvider } from "../secrets/local-encrypted-provider.js";

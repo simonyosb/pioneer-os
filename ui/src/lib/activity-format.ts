@@ -1,4 +1,4 @@
-import type { Agent } from "@pioneeros/shared";
+import type { Agent } from "@ardonex/shared";
 import type { CompanyUserProfile } from "./company-members";
 
 type ActivityDetails = Record<string, unknown> | null | undefined;

@@ -10,7 +10,7 @@ import {
   createDb,
   projects,
   routines,
-} from "@pioneeros/db";
+} from "@ardonex/db";
 import {
   getEmbeddedPostgresTestSupport,
   startEmbeddedPostgresTestDatabase,

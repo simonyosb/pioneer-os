@@ -1,5 +1,5 @@
 import { Flag } from "lucide-react";
-import type { Agent } from "@pioneeros/shared";
+import type { Agent } from "@ardonex/shared";
 import { Button } from "@/components/ui/button";
 
 interface IssueAssignedBacklogNoticeProps {

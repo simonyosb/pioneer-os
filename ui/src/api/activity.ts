@@ -1,7 +1,7 @@
-import type { ActivityEvent, RunLivenessState } from "@pioneeros/shared";
+import type { ActivityEvent, RunLivenessState } from "@ardonex/shared";
 import { api } from "./client";
 
-export type { RunLivenessState } from "@pioneeros/shared";
+export type { RunLivenessState } from "@ardonex/shared";
 
 export interface RunForIssue {
   runId: string;

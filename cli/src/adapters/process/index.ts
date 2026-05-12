@@ -1,4 +1,4 @@
-import type { CLIAdapterModule } from "@pioneeros/adapter-utils";
+import type { CLIAdapterModule } from "@ardonex/adapter-utils";
 import { printProcessStdoutEvent } from "./format-event.js";
 
 export const processCLIAdapter: CLIAdapterModule = {

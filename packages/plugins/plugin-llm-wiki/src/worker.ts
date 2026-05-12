@@ -5,7 +5,7 @@ import {
   type PluginContext,
   type PluginManagedRoutineDeclaration,
   type PluginManagedRoutineResolution,
-} from "@pioneeros/plugin-sdk";
+} from "@ardonex/plugin-sdk";
 import {
   PAPERCLIP_DISTILL_SKILL_KEY,
   WIKI_MAINTENANCE_ROUTINE_KEYS,

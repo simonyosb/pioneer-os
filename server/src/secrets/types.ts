@@ -1,5 +1,5 @@
-import type { SecretProvider, SecretProviderDescriptor } from "@pioneeros/shared";
-import type { DeploymentMode } from "@pioneeros/shared";
+import type { SecretProvider, SecretProviderDescriptor } from "@ardonex/shared";
+import type { DeploymentMode } from "@ardonex/shared";
 
 export interface StoredSecretVersionMaterial {
   [key: string]: unknown;

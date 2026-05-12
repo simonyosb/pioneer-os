@@ -51,9 +51,9 @@ const {
   })),
 }));
 
-vi.mock("@pioneeros/adapter-utils/server-utils", async () => {
-  const actual = await vi.importActual<typeof import("@pioneeros/adapter-utils/server-utils")>(
-    "@pioneeros/adapter-utils/server-utils",
+vi.mock("@ardonex/adapter-utils/server-utils", async () => {
+  const actual = await vi.importActual<typeof import("@ardonex/adapter-utils/server-utils")>(
+    "@ardonex/adapter-utils/server-utils",
   );
   return {
     ...actual,
@@ -63,9 +63,9 @@ vi.mock("@pioneeros/adapter-utils/server-utils", async () => {
   };
 });
 
-vi.mock("@pioneeros/adapter-utils/ssh", async () => {
-  const actual = await vi.importActual<typeof import("@pioneeros/adapter-utils/ssh")>(
-    "@pioneeros/adapter-utils/ssh",
+vi.mock("@ardonex/adapter-utils/ssh", async () => {
+  const actual = await vi.importActual<typeof import("@ardonex/adapter-utils/ssh")>(
+    "@ardonex/adapter-utils/ssh",
   );
   return {
     ...actual,
@@ -76,9 +76,9 @@ vi.mock("@pioneeros/adapter-utils/ssh", async () => {
   };
 });
 
-vi.mock("@pioneeros/adapter-utils/execution-target", async () => {
-  const actual = await vi.importActual<typeof import("@pioneeros/adapter-utils/execution-target")>(
-    "@pioneeros/adapter-utils/execution-target",
+vi.mock("@ardonex/adapter-utils/execution-target", async () => {
+  const actual = await vi.importActual<typeof import("@ardonex/adapter-utils/execution-target")>(
+    "@ardonex/adapter-utils/execution-target",
   );
   return {
     ...actual,

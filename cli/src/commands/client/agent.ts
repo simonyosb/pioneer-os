@@ -1,9 +1,9 @@
 import { Command } from "commander";
-import type { Agent } from "@pioneeros/shared";
+import type { Agent } from "@ardonex/shared";
 import {
   removeMaintainerOnlySkillSymlinks,
   resolvePaperclipSkillsDir,
-} from "@pioneeros/adapter-utils/server-utils";
+} from "@ardonex/adapter-utils/server-utils";
 import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";

@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
-import type { Agent, CompanySecret } from "@pioneeros/shared";
+import type { Agent, CompanySecret } from "@ardonex/shared";
 import type { PaperclipConfig } from "../config/schema.js";
 import { secretsCheck } from "../checks/secrets-check.js";
 import {

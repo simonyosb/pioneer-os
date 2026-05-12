@@ -1,7 +1,7 @@
 // @vitest-environment jsdom
 
 import { describe, expect, it } from "vitest";
-import type { SecretProviderDescriptor } from "@pioneeros/shared";
+import type { SecretProviderDescriptor } from "@ardonex/shared";
 import {
   getAwsManagedPathPreview,
   getCreateProviderBlockReason,

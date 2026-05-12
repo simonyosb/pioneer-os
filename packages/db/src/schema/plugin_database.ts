@@ -10,7 +10,7 @@ import type {
   PluginDatabaseMigrationStatus,
   PluginDatabaseNamespaceMode,
   PluginDatabaseNamespaceStatus,
-} from "@pioneeros/shared";
+} from "@ardonex/shared";
 import { plugins } from "./plugins.js";
 
 /**

@@ -1,4 +1,4 @@
-import type { ProjectWorkspaceRuntimeConfig } from "@pioneeros/shared";
+import type { ProjectWorkspaceRuntimeConfig } from "@ardonex/shared";
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
