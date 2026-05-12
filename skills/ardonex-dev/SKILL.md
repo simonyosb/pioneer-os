@@ -1,5 +1,5 @@
 ---
-name: pioneeros-dev
+name: ardonex-dev
 required: false
 description: >
   Develop and operate a local Paperclip instance — start and stop servers,
