@@ -7,7 +7,7 @@ import type {
 import {
   buildSandboxNpmInstallCommand,
   getAdapterSessionManagement,
-} from "@paperclipai/adapter-utils";
+} from "@ardonex/adapter-utils";
 import {
   execute as acpxExecute,
   testEnvironment as acpxTestEnvironment,
@@ -15,11 +15,11 @@ import {
   getConfigSchema as getAcpxConfigSchema,
   listAcpxSkills,
   syncAcpxSkills,
-} from "@paperclipai/adapter-acpx-local/server";
+} from "@ardonex/adapter-acpx-local/server";
 import {
   agentConfigurationDoc as acpxAgentConfigurationDoc,
   models as acpxModels,
-} from "@paperclipai/adapter-acpx-local";
+} from "@ardonex/adapter-acpx-local";
 import {
   execute as claudeExecute,
   listClaudeSkills,
@@ -28,12 +28,12 @@ import {
   testEnvironment as claudeTestEnvironment,
   sessionCodec as claudeSessionCodec,
   getQuotaWindows as claudeGetQuotaWindows,
-} from "@paperclipai/adapter-claude-local/server";
+} from "@ardonex/adapter-claude-local/server";
 import {
   agentConfigurationDoc as claudeAgentConfigurationDoc,
   models as claudeModels,
   modelProfiles as claudeModelProfiles,
-} from "@paperclipai/adapter-claude-local";
+} from "@ardonex/adapter-claude-local";
 import {
   execute as codexExecute,
   listCodexSkills,
@@ -41,43 +41,43 @@ import {
   testEnvironment as codexTestEnvironment,
   sessionCodec as codexSessionCodec,
   getQuotaWindows as codexGetQuotaWindows,
-} from "@paperclipai/adapter-codex-local/server";
+} from "@ardonex/adapter-codex-local/server";
 import {
   agentConfigurationDoc as codexAgentConfigurationDoc,
   models as codexModels,
   modelProfiles as codexModelProfiles,
-} from "@paperclipai/adapter-codex-local";
+} from "@ardonex/adapter-codex-local";
 import {
   execute as cursorExecute,
   listCursorSkills,
   syncCursorSkills,
   testEnvironment as cursorTestEnvironment,
   sessionCodec as cursorSessionCodec,
-} from "@paperclipai/adapter-cursor-local/server";
+} from "@ardonex/adapter-cursor-local/server";
 import {
   agentConfigurationDoc as cursorAgentConfigurationDoc,
   models as cursorModels,
   modelProfiles as cursorModelProfiles,
-} from "@paperclipai/adapter-cursor-local";
+} from "@ardonex/adapter-cursor-local";
 import {
   execute as cursorCloudExecute,
   getConfigSchema as getCursorCloudConfigSchema,
   sessionCodec as cursorCloudSessionCodec,
   testEnvironment as cursorCloudTestEnvironment,
-} from "@paperclipai/adapter-cursor-cloud/server";
-import { agentConfigurationDoc as cursorCloudAgentConfigurationDoc } from "@paperclipai/adapter-cursor-cloud";
+} from "@ardonex/adapter-cursor-cloud/server";
+import { agentConfigurationDoc as cursorCloudAgentConfigurationDoc } from "@ardonex/adapter-cursor-cloud";
 import {
   execute as geminiExecute,
   listGeminiSkills,
   syncGeminiSkills,
   testEnvironment as geminiTestEnvironment,
   sessionCodec as geminiSessionCodec,
-} from "@paperclipai/adapter-gemini-local/server";
+} from "@ardonex/adapter-gemini-local/server";
 import {
   agentConfigurationDoc as geminiAgentConfigurationDoc,
   models as geminiModels,
   modelProfiles as geminiModelProfiles,
-} from "@paperclipai/adapter-gemini-local";
+} from "@ardonex/adapter-gemini-local";
 import {
   execute as openCodeExecute,
   listOpenCodeSkills,
@@ -85,20 +85,20 @@ import {
   testEnvironment as openCodeTestEnvironment,
   sessionCodec as openCodeSessionCodec,
   listOpenCodeModels,
-} from "@paperclipai/adapter-opencode-local/server";
+} from "@ardonex/adapter-opencode-local/server";
 import {
   agentConfigurationDoc as openCodeAgentConfigurationDoc,
   models as openCodeModels,
   modelProfiles as openCodeModelProfiles,
-} from "@paperclipai/adapter-opencode-local";
+} from "@ardonex/adapter-opencode-local";
 import {
   execute as openclawGatewayExecute,
   testEnvironment as openclawGatewayTestEnvironment,
-} from "@paperclipai/adapter-openclaw-gateway/server";
+} from "@ardonex/adapter-openclaw-gateway/server";
 import {
   agentConfigurationDoc as openclawGatewayAgentConfigurationDoc,
   models as openclawGatewayModels,
-} from "@paperclipai/adapter-openclaw-gateway";
+} from "@ardonex/adapter-openclaw-gateway";
 import { listCodexModels, refreshCodexModels } from "./codex-models.js";
 import { listCursorModels } from "./cursor-models.js";
 import {
@@ -108,11 +108,11 @@ import {
   testEnvironment as piTestEnvironment,
   sessionCodec as piSessionCodec,
   listPiModels,
-} from "@paperclipai/adapter-pi-local/server";
+} from "@ardonex/adapter-pi-local/server";
 import {
   agentConfigurationDoc as piAgentConfigurationDoc,
   modelProfiles as piModelProfiles,
-} from "@paperclipai/adapter-pi-local";
+} from "@ardonex/adapter-pi-local";
 import {
   execute as hermesExecute,
   testEnvironment as hermesTestEnvironment,
@@ -421,18 +421,21 @@ const hermesLocalAdapter: ServerAdapterModule = {
         ? existingConfig.promptTemplate
         : "";
     const authGuardPrompt = [
-      "Paperclip API safety rule:",
-      "Use Authorization: Bearer $PAPERCLIP_API_KEY on every Paperclip API request.",
-      "Use X-Paperclip-Run-Id: $PAPERCLIP_RUN_ID on every Paperclip API request that writes or mutates data, including comments and issue updates.",
-      "Never use a board, browser, or local-board session for Paperclip API writes.",
+      "Ardonex API safety rule:",
+      "Use Authorization: Bearer $ARDONEX_API_KEY (or $PAPERCLIP_API_KEY) on every API request.",
+      "Use X-Ardonex-Run-Id: $ARDONEX_RUN_ID (or X-Paperclip-Run-Id: $PAPERCLIP_RUN_ID) on every API request that writes or mutates data, including comments and issue updates.",
+      "Never use a board, browser, or local-board session for API writes.",
     ].join("\n");
 
+    const authToken = normalizedCtx.authToken;
+    const runId = normalizedCtx.runId;
     const patchedConfig: Record<string, unknown> = {
       ...existingConfig,
       env: {
         ...existingEnv,
-        ...(!explicitApiKey ? { PAPERCLIP_API_KEY: normalizedCtx.authToken } : {}),
-        PAPERCLIP_RUN_ID: normalizedCtx.runId,
+        ...(!explicitApiKey ? { PAPERCLIP_API_KEY: authToken, ARDONEX_API_KEY: authToken } : {}),
+        PAPERCLIP_RUN_ID: runId,
+        ARDONEX_RUN_ID: runId,
       },
     };
 

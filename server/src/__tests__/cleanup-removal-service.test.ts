@@ -15,7 +15,7 @@ import {
   issueExecutionDecisions,
   issueReadStates,
   issues,
-} from "@paperclipai/db";
+} from "@ardonex/db";
 import {
   getEmbeddedPostgresTestSupport,
   startEmbeddedPostgresTestDatabase,

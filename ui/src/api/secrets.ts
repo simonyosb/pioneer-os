@@ -11,7 +11,7 @@ import type {
   SecretProviderConfigHealthResponse,
   SecretProviderDescriptor,
   SecretStatus,
-} from "@paperclipai/shared";
+} from "@ardonex/shared";
 import { api } from "./client";
 
 export interface SecretUsageResponse {

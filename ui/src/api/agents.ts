@@ -12,12 +12,12 @@ import type {
   HeartbeatRun,
   Approval,
   AgentConfigRevision,
-} from "@paperclipai/shared";
+} from "@ardonex/shared";
 import type {
   AdapterModelProfileDefinition,
   AdapterModelProfileKey,
-} from "@paperclipai/adapter-utils";
-import { isUuidLike, normalizeAgentUrlKey } from "@paperclipai/shared";
+} from "@ardonex/adapter-utils";
+import { isUuidLike, normalizeAgentUrlKey } from "@ardonex/shared";
 import { ApiError, api } from "./client";
 
 export interface AgentKey {

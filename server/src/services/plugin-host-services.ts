@@ -1,4 +1,4 @@
-import type { Db } from "@paperclipai/db";
+import type { Db } from "@ardonex/db";
 import {
   agentTaskSessions as agentTaskSessionsTable,
   agents as agentsTable,
@@ -7,7 +7,7 @@ import {
   heartbeatRuns,
   issues as issuesTable,
   pluginLogs,
-} from "@paperclipai/db";
+} from "@ardonex/db";
 import { eq, and, like, desc, inArray, sql } from "drizzle-orm";
 import type {
   HostServices,
@@ -20,9 +20,9 @@ import type {
   IssueComment,
   PluginIssueAssigneeSummary,
   PluginIssueOrchestrationSummary,
-} from "@paperclipai/plugin-sdk";
-import type { CreateIssueThreadInteraction, IssueDocumentSummary } from "@paperclipai/shared";
-import { pluginOperationIssueOriginKind } from "@paperclipai/shared";
+} from "@ardonex/plugin-sdk";
+import type { CreateIssueThreadInteraction, IssueDocumentSummary } from "@ardonex/shared";
+import { pluginOperationIssueOriginKind } from "@ardonex/shared";
 import { companyService } from "./companies.js";
 import { agentService } from "./agents.js";
 import { projectService } from "./projects.js";
@@ -478,7 +478,7 @@ export function buildHostServices(
   pluginKey: string,
   eventBus: PluginEventBus,
   notifyWorker?: (method: string, params: unknown) => void,
-  options: { pluginWorkerManager?: PluginWorkerManager; manifest?: import("@paperclipai/shared").PaperclipPluginManifestV1 } = {},
+  options: { pluginWorkerManager?: PluginWorkerManager; manifest?: import("@ardonex/shared").PaperclipPluginManifestV1 } = {},
 ): HostServices & { dispose(): void } {
   const registry = pluginRegistryService(db);
   const stateStore = pluginStateStore(db);
@@ -955,7 +955,7 @@ export function buildHostServices(
         await scopedBus.emit(params.name, params.companyId, params.payload);
       },
       async subscribe(params: { eventPattern: string; filter?: Record<string, unknown> | null }) {
-        const handler = async (event: import("@paperclipai/plugin-sdk").PluginEvent) => {
+        const handler = async (event: import("@ardonex/plugin-sdk").PluginEvent) => {
           if (notifyWorker) {
             notifyWorker("onEvent", { event });
           }

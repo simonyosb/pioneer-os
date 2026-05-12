@@ -7,8 +7,8 @@ import type {
   FeedbackVoteValue,
   Issue,
   IssueDocument,
-} from "@paperclipai/shared";
-import { isSystemIssueDocumentKey } from "@paperclipai/shared";
+} from "@ardonex/shared";
+import { isSystemIssueDocumentKey } from "@ardonex/shared";
 import { useLocation } from "@/lib/router";
 import { ApiError } from "../api/client";
 import { issuesApi } from "../api/issues";

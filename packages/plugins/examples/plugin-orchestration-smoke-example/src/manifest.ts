@@ -1,4 +1,4 @@
-import type { PaperclipPluginManifestV1 } from "@paperclipai/plugin-sdk";
+import type { PaperclipPluginManifestV1 } from "@ardonex/plugin-sdk";
 
 const manifest: PaperclipPluginManifestV1 = {
   id: "paperclipai.plugin-orchestration-smoke-example",

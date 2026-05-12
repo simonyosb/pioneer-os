@@ -60,8 +60,8 @@ export interface PluginBundlerPresets {
  */
 export function createPluginBundlerPresets(input: PluginBundlerPresetInput = {}): PluginBundlerPresets {
   const uiExternal = [
-    "@paperclipai/plugin-sdk/ui",
-    "@paperclipai/plugin-sdk/ui/hooks",
+    "@ardonex/plugin-sdk/ui",
+    "@ardonex/plugin-sdk/ui/hooks",
     "react",
     "react-dom",
     "react/jsx-runtime",
@@ -94,7 +94,7 @@ export function createPluginBundlerPresets(input: PluginBundlerPresetInput = {})
     platform: "node",
     target: "node20",
     sourcemap,
-    external: ["@paperclipai/plugin-sdk"],
+    external: ["@ardonex/plugin-sdk"],
   };
 
   const esbuildUi = uiEntry
@@ -130,7 +130,7 @@ export function createPluginBundlerPresets(input: PluginBundlerPresetInput = {})
       sourcemap,
       entryFileNames: "manifest.js",
     },
-    external: ["@paperclipai/plugin-sdk"],
+    external: ["@ardonex/plugin-sdk"],
   };
 
   const rollupUi = uiEntry

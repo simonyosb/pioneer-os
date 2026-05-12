@@ -1097,3 +1097,5 @@ export type {
   EnvironmentProviderCapability,
   EnvironmentSupportStatus,
 } from "./environment-support.js";
+
+export { applyEnvCompatShim, readPioneerEnv, addPioneerEnvAliases, ARDONEX_ENV_MAP, PAPERCLIP_TO_ARDONEX_MAP } from "./env-compat.js";

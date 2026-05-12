@@ -18,7 +18,7 @@ import type {
   PluginRecord,
   PluginConfig,
   PluginStatus,
-} from "@paperclipai/shared";
+} from "@ardonex/shared";
 import { api } from "./client";
 
 /**

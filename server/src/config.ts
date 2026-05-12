@@ -21,7 +21,8 @@ import {
   inferBindModeFromHost,
   resolveRuntimeBind,
   validateConfiguredBindMode,
-} from "@paperclipai/shared";
+} from "@ardonex/shared";
+import { applyEnvCompatShim } from "@ardonex/shared/env-compat";
 import {
   resolveDefaultBackupDir,
   resolveDefaultEmbeddedPostgresDir,
@@ -30,10 +31,16 @@ import {
   resolveHomeAwarePath,
 } from "./home-paths.js";
 
+// Normalise ARDONEX_* ↔ PAPERCLIP_* before any env reads so both prefixes work.
+applyEnvCompatShim();
+
 const PAPERCLIP_ENV_FILE_PATH = resolvePaperclipEnvPath();
 if (existsSync(PAPERCLIP_ENV_FILE_PATH)) {
   loadDotenv({ path: PAPERCLIP_ENV_FILE_PATH, override: false, quiet: true });
 }
+
+// Re-apply shim after dotenv load in case the .env file contained ARDONEX_* vars.
+applyEnvCompatShim();
 
 const CWD_ENV_PATH = resolve(process.cwd(), ".env");
 const isSameFile = existsSync(CWD_ENV_PATH) && existsSync(PAPERCLIP_ENV_FILE_PATH)
@@ -41,6 +48,8 @@ const isSameFile = existsSync(CWD_ENV_PATH) && existsSync(PAPERCLIP_ENV_FILE_PAT
   : CWD_ENV_PATH === PAPERCLIP_ENV_FILE_PATH;
 if (!isSameFile && existsSync(CWD_ENV_PATH)) {
   loadDotenv({ path: CWD_ENV_PATH, override: false, quiet: true });
+  // Re-apply after CWD .env load too.
+  applyEnvCompatShim();
 }
 
 maybeRepairLegacyWorktreeConfigAndEnvFiles();

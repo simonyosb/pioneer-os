@@ -39,7 +39,7 @@ import type {
   IssueRelationIssueSummary,
   SuccessfulRunHandoffState,
   IssueWorkMode,
-} from "@paperclipai/shared";
+} from "@ardonex/shared";
 import type { ActiveRunForIssue, LiveRunForIssue } from "../api/heartbeats";
 import { useLiveRunTranscripts } from "./transcript/useLiveRunTranscripts";
 import { usePaperclipIssueRuntime, type PaperclipIssueRuntimeReassignment } from "../hooks/usePaperclipIssueRuntime";
@@ -117,7 +117,7 @@ import {
 import type {
   IssueCommentMetadata,
   IssueCommentPresentation,
-} from "@paperclipai/shared";
+} from "@ardonex/shared";
 import {
   describeToolInput,
   displayToolName,
@@ -2242,12 +2242,12 @@ function SystemNoticeCommentRow({
   const source = (() => {
     const runAgentName = runAgentId ? agentMap?.get(runAgentId)?.name ?? null : null;
     if (authorType === "system") {
-      const label = runAgentName ?? "Paperclip";
+      const label = runAgentName ?? "Ardonex";
       if (runAgentId && runId) return { label, href: `/agents/${runAgentId}/runs/${runId}` };
       return { label };
     }
     if (runAgentId && runId) {
-      return { label: authorName ?? runAgentName ?? "Paperclip", href: `/agents/${runAgentId}/runs/${runId}` };
+      return { label: authorName ?? runAgentName ?? "Ardonex", href: `/agents/${runAgentId}/runs/${runId}` };
     }
     if (authorName) return { label: authorName };
     return undefined;

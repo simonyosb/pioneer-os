@@ -1,4 +1,4 @@
-import type { Issue } from "@paperclipai/shared";
+import type { Issue } from "@ardonex/shared";
 
 export interface IssueTree {
   roots: Issue[];

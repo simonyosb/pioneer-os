@@ -15,7 +15,7 @@ import {
   projects,
   routines,
   routineTriggers,
-} from "@paperclipai/db";
+} from "@ardonex/db";
 import {
   copyGitHooksToWorktreeGitDir,
   copySeededSecretsKey,

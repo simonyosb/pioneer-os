@@ -890,6 +890,23 @@ export function buildInvocationEnvForLogs(
   return redactEnvForLogs(merged);
 }
 
+/**
+ * For every PAPERCLIP_X key in the env record, also set the ARDONEX_X alias
+ * so agents can use either prefix. Non-PAPERCLIP_* keys are passed through.
+ * Mutates and returns the same object.
+ */
+export function addPioneerAliases(env: Record<string, string>): Record<string, string> {
+  for (const key of Object.keys(env)) {
+    if (key.startsWith("PAPERCLIP_")) {
+      const ardonexKey = "ARDONEX_" + key.slice("PAPERCLIP_".length);
+      if (!(ardonexKey in env)) {
+        env[ardonexKey] = env[key];
+      }
+    }
+  }
+  return env;
+}
+
 export function buildPaperclipEnv(agent: { id: string; companyId: string }): Record<string, string> {
   const resolveHostForUrl = (rawHost: string): string => {
     const host = rawHost.trim();
@@ -902,15 +919,17 @@ export function buildPaperclipEnv(agent: { id: string; companyId: string }): Rec
     PAPERCLIP_COMPANY_ID: agent.companyId,
   };
   const runtimeHost = resolveHostForUrl(
-    process.env.PAPERCLIP_LISTEN_HOST ?? process.env.HOST ?? "localhost",
+    process.env.ARDONEX_LISTEN_HOST ?? process.env.PAPERCLIP_LISTEN_HOST ?? process.env.HOST ?? "localhost",
   );
-  const runtimePort = process.env.PAPERCLIP_LISTEN_PORT ?? process.env.PORT ?? "3100";
+  const runtimePort = process.env.ARDONEX_LISTEN_PORT ?? process.env.PAPERCLIP_LISTEN_PORT ?? process.env.PORT ?? "3100";
   const apiUrl =
+    process.env.ARDONEX_RUNTIME_API_URL ??
     process.env.PAPERCLIP_RUNTIME_API_URL ??
+    process.env.ARDONEX_API_URL ??
     process.env.PAPERCLIP_API_URL ??
     `http://${runtimeHost}:${runtimePort}`;
   vars.PAPERCLIP_API_URL = apiUrl;
-  return vars;
+  return addPioneerAliases(vars);
 }
 
 export function applyPaperclipWorkspaceEnv(
@@ -942,6 +961,11 @@ export function applyPaperclipWorkspaceEnv(
   for (const [key, value] of mappings) {
     if (typeof value === "string" && value.length > 0) {
       env[key] = value;
+      // Also set ARDONEX_* alias for PAPERCLIP_* keys.
+      if (key.startsWith("PAPERCLIP_")) {
+        const ardonexKey = "ARDONEX_" + key.slice("PAPERCLIP_".length);
+        if (!(ardonexKey in env)) env[ardonexKey] = value;
+      }
     }
   }
 

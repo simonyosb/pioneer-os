@@ -10,7 +10,7 @@ import type {
   EnvBinding,
   SecretProvider,
   SecretProviderDescriptor,
-} from "@paperclipai/shared";
+} from "@ardonex/shared";
 import {
   addCommonClientOptions,
   formatInlineRecord,

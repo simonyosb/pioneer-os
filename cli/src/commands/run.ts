@@ -16,6 +16,7 @@ import {
   resolvePaperclipHomeDir,
   resolvePaperclipInstanceId,
 } from "../config/home.js";
+import { migrateLegacyHomeDir } from "@ardonex/shared/home-paths";
 
 interface RunOptions {
   config?: string;
@@ -33,7 +34,18 @@ interface StartedServer {
 }
 
 export async function runCommand(opts: RunOptions): Promise<void> {
+  // Migrate ~/.paperclip → ~/.ardonex if this is the first run under the new name.
+  // This must happen before resolvePaperclipHomeDir() so the home dir is correct.
+  try {
+    migrateLegacyHomeDir();
+  } catch (err) {
+    // migrateLegacyHomeDir throws when both dirs exist as real directories.
+    p.log.error(err instanceof Error ? err.message : String(err));
+    process.exit(1);
+  }
+
   const instanceId = resolvePaperclipInstanceId(opts.instance);
+  process.env.ARDONEX_INSTANCE_ID = instanceId;
   process.env.PAPERCLIP_INSTANCE_ID = instanceId;
 
   const homeDir = resolvePaperclipHomeDir();
@@ -143,7 +155,7 @@ function getMissingModuleSpecifier(err: unknown): string | null {
 function maybeEnableUiDevMiddleware(entrypoint: string): void {
   if (process.env.PAPERCLIP_UI_DEV_MIDDLEWARE !== undefined) return;
   const normalized = entrypoint.replaceAll("\\", "/");
-  if (normalized.endsWith("/server/src/index.ts") || normalized.endsWith("@paperclipai/server/src/index.ts")) {
+  if (normalized.endsWith("/server/src/index.ts") || normalized.endsWith("@ardonex/server/src/index.ts")) {
     process.env.PAPERCLIP_UI_DEV_MIDDLEWARE = "true";
   }
 }
@@ -182,17 +194,17 @@ async function importServerEntry(): Promise<StartedServer> {
     return await startServerFromModule(mod, devEntry);
   }
 
-  // Production mode: import the published @paperclipai/server package
+  // Production mode: import the published @ardonex/server package
   try {
-    const mod = await import("@paperclipai/server");
-    return await startServerFromModule(mod, "@paperclipai/server");
+    const mod = await import("@ardonex/server");
+    return await startServerFromModule(mod, "@ardonex/server");
   } catch (err) {
     const missingSpecifier = getMissingModuleSpecifier(err);
-    const missingServerEntrypoint = !missingSpecifier || missingSpecifier === "@paperclipai/server";
+    const missingServerEntrypoint = !missingSpecifier || missingSpecifier === "@ardonex/server";
     if (isModuleNotFoundError(err) && missingServerEntrypoint) {
       throw new Error(
         `Could not locate a Paperclip server entrypoint.\n` +
-          `Tried: ${devEntry}, @paperclipai/server\n` +
+          `Tried: ${devEntry}, @ardonex/server\n` +
           `${formatError(err)}`,
       );
     }
