@@ -1,4 +1,4 @@
-import type { AgentSkillEntry } from "@paperclipai/shared";
+import type { AgentSkillEntry } from "@pioneeros/shared";
 
 export interface AgentSkillDraftState {
   draft: string[];

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <style>
+      .bg  { fill: #18181b; }
+      .mark { fill: none; stroke: #e4e4e7; stroke-linecap: round; stroke-linejoin: round; }
+      .title { fill: #e4e4e7; font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, monospace; font-weight: 700; letter-spacing: -0.02em; }
+      .sub   { fill: #71717a; font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, monospace; font-weight: 400; letter-spacing: 0.06em; font-size: 28px; text-transform: uppercase; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" class="bg"/>
+
+  <!-- Subtle grid overlay -->
+  <line x1="0" y1="315" x2="1200" y2="315" stroke="#27272a" stroke-width="1"/>
+  <line x1="600" y1="0" x2="600" y2="630" stroke="#27272a" stroke-width="1"/>
+
+  <!-- Large P monogram, centered-left -->
+  <g transform="translate(120, 155) scale(13.3)">
+    <path class="mark" stroke-width="2" d="M7 3v18M7 3h5.5a5 5 0 0 1 0 10H7"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="420" y="318" class="title" font-size="100" dominant-baseline="middle">Pioneer OS</text>
+
+  <!-- Tagline -->
+  <text x="422" y="400" class="sub">Agent coordination platform</text>
+</svg>

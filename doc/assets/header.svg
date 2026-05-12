@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="240" viewBox="0 0 1200 240">
+  <defs>
+    <style>
+      .bg { fill: #18181b; }
+      .mark { fill: none; stroke: #e4e4e7; stroke-linecap: round; stroke-linejoin: round; }
+      .wordmark { fill: #e4e4e7; font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, monospace; font-weight: 600; letter-spacing: -0.02em; }
+      .tag { fill: #71717a; font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, monospace; font-weight: 400; letter-spacing: 0.04em; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="240" class="bg"/>
+
+  <!-- Pioneer OS monogram: P mark at 80px scale (3.33× the 24-unit grid) -->
+  <!-- Stem: from (80, 56) to (80, 184) — height 128 matching 24→80 scale -->
+  <!-- Bowl: from (80,56) right to (126,56), arc radius 40 down to (126,136), back to (80,136) -->
+  <g transform="translate(80, 56) scale(5.33)">
+    <path class="mark" stroke-width="2" d="M7 3v18M7 3h5.5a5 5 0 0 1 0 10H7"/>
+  </g>
+
+  <!-- Wordmark: "Pioneer OS" -->
+  <text x="220" y="136" class="wordmark" font-size="72">Pioneer OS</text>
+
+  <!-- Tagline -->
+  <text x="222" y="174" class="tag" font-size="22">Agent coordination platform</text>
+</svg>

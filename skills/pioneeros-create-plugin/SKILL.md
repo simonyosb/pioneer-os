@@ -1,5 +1,5 @@
 ---
-name: paperclip-create-plugin
+name: pioneeros-create-plugin
 description: >
   Create new Paperclip plugins with the current alpha SDK/runtime. Use when
   scaffolding a plugin package, adding a new example plugin, or updating plugin
@@ -33,14 +33,14 @@ Current runtime assumptions:
 Use the scaffold package instead of hand-writing the boilerplate:
 
 ```bash
-pnpm --filter @paperclipai/create-paperclip-plugin build
+pnpm --filter @pioneeros/create-paperclip-plugin build
 node packages/plugins/create-paperclip-plugin/dist/index.js <npm-package-name> --output <target-dir>
 ```
 
 For a plugin that lives outside the Paperclip repo, pass `--sdk-path` and let the scaffold snapshot the local SDK/shared packages into `.paperclip-sdk/`:
 
 ```bash
-pnpm --filter @paperclipai/create-paperclip-plugin build
+pnpm --filter @pioneeros/create-paperclip-plugin build
 node packages/plugins/create-paperclip-plugin/dist/index.js @acme/plugin-name \
   --output /absolute/path/to/plugin-repos \
   --sdk-path /absolute/path/to/paperclip/packages/plugins/sdk

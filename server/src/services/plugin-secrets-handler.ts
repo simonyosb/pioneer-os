@@ -33,7 +33,7 @@
  * @see services/secrets.ts — secretService used by agent env bindings
  */
 
-import type { Db } from "@paperclipai/db";
+import type { Db } from "@pioneeros/db";
 import {
   collectSecretRefPaths,
   isUuidSecretRef,

@@ -2,8 +2,8 @@ import { describe, expect, it, vi } from "vitest";
 import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
-import { runChildProcess } from "@paperclipai/adapter-utils/server-utils";
-import { execute } from "@paperclipai/adapter-claude-local/server";
+import { runChildProcess } from "@pioneeros/adapter-utils/server-utils";
+import { execute } from "@pioneeros/adapter-claude-local/server";
 
 async function writeFailingClaudeCommand(
   commandPath: string,

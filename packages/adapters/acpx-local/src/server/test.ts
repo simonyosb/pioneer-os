@@ -6,11 +6,11 @@ import type {
   AdapterEnvironmentCheck,
   AdapterEnvironmentTestContext,
   AdapterEnvironmentTestResult,
-} from "@paperclipai/adapter-utils";
+} from "@pioneeros/adapter-utils";
 import {
   asString,
   parseObject,
-} from "@paperclipai/adapter-utils/server-utils";
+} from "@pioneeros/adapter-utils/server-utils";
 
 const require = createRequire(import.meta.url);
 const MIN_NODE_MAJOR = 22;

@@ -2,8 +2,8 @@ import { createHash } from "node:crypto";
 import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
-import type { AdapterExecutionContext } from "@paperclipai/adapter-utils";
-import { resolvePaperclipInstanceRootForAdapter } from "@paperclipai/adapter-utils/server-utils";
+import type { AdapterExecutionContext } from "@pioneeros/adapter-utils";
+import { resolvePaperclipInstanceRootForAdapter } from "@pioneeros/adapter-utils/server-utils";
 
 const SEEDED_SHARED_FILES = [
   ".credentials.json",
