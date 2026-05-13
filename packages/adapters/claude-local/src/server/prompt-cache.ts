@@ -172,3 +172,34 @@ export async function prepareClaudePromptBundle(input: {
     instructionsFilePath,
   };
 }
+
+/**
+ * Returns whether the stable instructions block written by
+ * `prepareClaudePromptBundle` can be marked with an Anthropic
+ * `cache_control: { type: "ephemeral" }` breakpoint so that cold sessions
+ * still get a prompt-cache hit on the system-prompt prefix.
+ *
+ * TODAY: the adapter invokes the `claude` CLI binary as a subprocess via
+ * --append-system-prompt-file.  The Claude CLI (tested against
+ * @anthropic-ai/claude-agent-sdk 0.2.121) does not expose a flag or settings
+ * knob that lets callers attach cache_control breakpoints to the injected
+ * system prompt block.  The --exclude-dynamic-system-prompt-sections flag
+ * improves cross-user cache reuse for the *default* system prompt, but has no
+ * effect when a custom prompt is injected via --append-system-prompt-file.
+ *
+ * TODO: once the Claude CLI surfaces a mechanism to mark injected system-prompt
+ * blocks as cacheable (e.g. a --cache-system-prompt flag or a JSON settings
+ * file knob), wire it here:
+ *   1. Pass the returned value from this function to `buildClaudeArgs` in
+ *      execute.ts.
+ *   2. Add the appropriate CLI flag to the args array when the value is true.
+ *   3. Update the bundleKey hash (prompt-cache.ts:buildClaudePromptBundleKey)
+ *      if the flag changes the token layout.
+ *
+ * Until then this function always returns false and serves only as the
+ * canonical seam for tracking this capability gap.
+ */
+export function supportsSystemPromptCacheBreakpoint(): boolean {
+  // The claude CLI does not expose cache_control injection today.
+  return false;
+}

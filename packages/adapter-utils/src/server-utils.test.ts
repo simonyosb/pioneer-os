@@ -9,6 +9,7 @@ import {
   buildInvocationEnvForLogs,
   DEFAULT_PAPERCLIP_AGENT_PROMPT_TEMPLATE,
   materializePaperclipSkillCopy,
+  PAPERCLIP_EXECUTION_CONTRACT_TEXT,
   refreshPaperclipWorkspaceEnvForExecution,
   renderPaperclipWakePrompt,
   runningProcesses,
@@ -436,8 +437,8 @@ describe("renderPaperclipWakePrompt", () => {
     );
   });
 
-  it("adds the execution contract to scoped wake prompts", () => {
-    const prompt = renderPaperclipWakePrompt({
+  it("does not include the execution contract paragraph in per-wake messages (moved to session-level instructions)", () => {
+    const coldPrompt = renderPaperclipWakePrompt({
       reason: "issue_assigned",
       issue: {
         id: "issue-1",
@@ -454,12 +455,39 @@ describe("renderPaperclipWakePrompt", () => {
       fallbackFetchNeeded: false,
     });
 
-    expect(prompt).toContain("## Paperclip Wake Payload");
-    expect(prompt).toContain("Execution contract: take concrete action in this heartbeat");
-    expect(prompt).toContain("clear final disposition");
-    expect(prompt).toContain("evidence, not valid liveness paths by themselves");
-    expect(prompt).toContain("Use child issues for long or parallel delegated work instead of polling");
-    expect(prompt).toContain("named unblock owner/action");
+    expect(coldPrompt).toContain("## Paperclip Wake Payload");
+    expect(coldPrompt).not.toContain("Execution contract:");
+
+    const resumedPrompt = renderPaperclipWakePrompt(
+      {
+        reason: "issue_commented",
+        issue: {
+          id: "issue-1",
+          identifier: "PAP-1580",
+          title: "Update prompts",
+          status: "in_progress",
+        },
+        commentWindow: {
+          requestedCount: 1,
+          includedCount: 1,
+          missingCount: 0,
+        },
+        comments: [],
+        fallbackFetchNeeded: false,
+      },
+      { resumedSession: true },
+    );
+
+    expect(resumedPrompt).toContain("## Paperclip Resume Delta");
+    expect(resumedPrompt).not.toContain("Execution contract:");
+  });
+
+  it("exports PAPERCLIP_EXECUTION_CONTRACT_TEXT with the full execution contract wording", () => {
+    expect(PAPERCLIP_EXECUTION_CONTRACT_TEXT).toContain("Execution contract: take concrete action in this heartbeat");
+    expect(PAPERCLIP_EXECUTION_CONTRACT_TEXT).toContain("clear final disposition");
+    expect(PAPERCLIP_EXECUTION_CONTRACT_TEXT).toContain("evidence, not valid liveness paths by themselves");
+    expect(PAPERCLIP_EXECUTION_CONTRACT_TEXT).toContain("Use child issues for long or parallel delegated work instead of polling");
+    expect(PAPERCLIP_EXECUTION_CONTRACT_TEXT).toContain("named unblock owner/action");
   });
 
   it("renders planning-mode directives for assignment and comment wakes", () => {
@@ -730,6 +758,14 @@ describe("applyPaperclipWorkspaceEnv", () => {
       PAPERCLIP_WORKSPACE_REPO_REF: "main",
       PAPERCLIP_WORKSPACE_BRANCH: "feature/test",
       PAPERCLIP_WORKSPACE_WORKTREE_PATH: "/tmp/worktree",
+      ARDONEX_WORKSPACE_CWD: "/tmp/workspace",
+      ARDONEX_WORKSPACE_SOURCE: "project_primary",
+      ARDONEX_WORKSPACE_STRATEGY: "git_worktree",
+      ARDONEX_WORKSPACE_ID: "workspace-1",
+      ARDONEX_WORKSPACE_REPO_URL: "https://github.com/paperclipai/paperclip.git",
+      ARDONEX_WORKSPACE_REPO_REF: "main",
+      ARDONEX_WORKSPACE_BRANCH: "feature/test",
+      ARDONEX_WORKSPACE_WORKTREE_PATH: "/tmp/worktree",
       AGENT_HOME: "/tmp/agent-home",
     });
   });

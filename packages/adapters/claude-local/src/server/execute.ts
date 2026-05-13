@@ -44,6 +44,7 @@ import {
   shapePaperclipWorkspaceEnvForExecution,
   stringifyPaperclipWakePayload,
   DEFAULT_PAPERCLIP_AGENT_PROMPT_TEMPLATE,
+  PAPERCLIP_EXECUTION_CONTRACT_TEXT,
 } from "@ardonex/adapter-utils/server-utils";
 import { shellQuote } from "@ardonex/adapter-utils/ssh";
 import {
@@ -428,6 +429,8 @@ export async function execute(ctx: AdapterExecutionContext): Promise<AdapterExec
   // When instructionsFilePath is configured, build a stable content-addressed
   // file that includes both the file content and the path directive, so we only
   // need --append-system-prompt-file (Claude CLI forbids using both flags together).
+  // The execution contract paragraph is appended here (once per session) so it
+  // does not need to be repeated in every per-wake user message.
   let combinedInstructionsContents: string | null = null;
   if (instructionsFilePath) {
     try {
@@ -437,7 +440,9 @@ export async function execute(ctx: AdapterExecutionContext): Promise<AdapterExec
         `Resolve any relative file references from ${instructionsFileDir}. ` +
         `This base directory is authoritative for sibling instruction files such as ` +
         `./HEARTBEAT.md, ./SOUL.md, and ./TOOLS.md; do not resolve those from the parent agent directory.`;
-      combinedInstructionsContents = instructionsContent + pathDirective;
+      const executionContractSection =
+        `\n\n## Paperclip Execution Contract\n\n${PAPERCLIP_EXECUTION_CONTRACT_TEXT}`;
+      combinedInstructionsContents = instructionsContent + pathDirective + executionContractSection;
     } catch (err) {
       const reason = err instanceof Error ? err.message : String(err);
       await onLog(
